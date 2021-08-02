@@ -1,7 +1,7 @@
 function Header () {
     return (
         <>
-        THIS SI THE HEADER
+        THIS IS THE HEADER
         </>
     )
 }

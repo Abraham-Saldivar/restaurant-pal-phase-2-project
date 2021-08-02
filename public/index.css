@@ -149,3 +149,10 @@ h1 {
 .location-text {
 
 }
+
+/* Footer Styling */
+footer {
+    padding: 24px 40px;
+    border-top: 1.5px solid #CCCCCC;
+    color: #75736B
+}

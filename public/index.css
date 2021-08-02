@@ -4,6 +4,21 @@ body {
     font-size: 14px;
 }
 
+.styled-button {
+    background: #D1770A;
+    border-radius: 100px;
+    text-decoration: none;
+    color: white;
+    padding: 16px 40px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block;
+    margin: 0 auto;
+    width: 120px;
+    text-align: center;
+    font-weight: 600;
+}
+
 /* Nav Styling */
 nav {
     background-color: #FDF9EB;
@@ -31,4 +46,106 @@ h1 {
     color: #75736B;
     margin-left: 24px;
     float: right;
+}
+
+/* Homepage Styling */
+.hp-wrapper {
+    overflow: hidden;
+}
+
+.hp-banner {
+    background: url("https://i.ibb.co/2YT88v6/moving-background.png") repeat-x;
+    height: 500px;
+    width: 2916px;
+    animation: slide 60s linear infinite;
+}
+
+@keyframes slide{
+    0%{
+      transform: translate3d(0, 0, 0);
+    }
+    100%{
+      transform: translate3d(-972px, 0, 0);
+    }
+  }
+
+.hp-banner-text {
+    background: linear-gradient(90deg, rgba(253,249,235,0.9) 0%, rgba(253,249,235,0.9) 86%, rgba(253,249,235,0) 100%);
+    padding: 56px 80px 160px 80px;
+    width: calc(50vw - 40px);
+    position: absolute;
+    margin-top: -420px;
+}
+
+.hp-banner-intro {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 40px;
+    line-height: 120%;
+    margin-bottom: 24px;;
+}
+
+.hp-banner-cta {
+    color: #D1770A;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.mission-banner {
+    width: 75vw;
+    padding: 120px 40px;
+    margin: 0 auto;
+}
+
+.small-header {
+    color: #75736B;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 24px;
+    font-size: 12px;
+}
+
+.hero-text {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 24px;
+    line-height: 140%;
+    text-align: center;
+}
+
+.mission-banner .hero-text {
+    margin-bottom: 40px;
+}
+
+.sample-banner {
+    padding: 16px 80px 80px;
+}
+
+.sample-container {
+    width: 60vw;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.sample-banner .hero-text {
+    margin-bottom: 8px;
+}
+
+.sample-container img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 24px;
+    box-shadow: 10px 10px 5px #ccc;
+    -moz-box-shadow: 10px 10px 5px #ccc;
+    -webkit-box-shadow: 10px 10px 5px #ccc;
+    -khtml-box-shadow: 10px 10px 5px #ccc;
+}
+
+.sample-container a {
+    color: black;
+    text-decoration: none;
+}
+
+.location-text {
+
 }

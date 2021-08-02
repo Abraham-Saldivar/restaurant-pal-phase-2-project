@@ -12,50 +12,22 @@
             "logo-image": "test.png",
             "menu-image": "test.png",
             "google-map-link": "https://g.page/gigis-hollywood?share",
-            "hours": [
-              {
-                "day": "monday",
-                "open": "12:00",
-                "close": "18:00",
-                "isOpen": true
-              },
-              {
-                "day":"tuesday",
-                "open": "12:00",
-                "close": "18:00",	
-                "isOpen": true
-              },
-              {
-                "day": "wednesday",
-                "open": "12:00",
-                "close": "18:00",
-                "isOpen": true
-              },
-              {
-                "day": "thursday",
-                "open": "12:00",
-                "close": "18:00",
-                "isOpen": true
-              },
-              {
-                "day": "friday",
-                "open": "12:00",
-                "close": "18:00",
-                "isOpen": true
-              },
-              {
-                "day": "saturday",
-                "open": "12:00",
-                "close": "18:00",
-                "isOpen": false
-              },
-              {
-                "day": "sunday",
-                "open": "12:00",
-                "close": "18:00",
-                "isOpen": false
-              }
-            ]
+            "hours": {
+              "mondayOpen": "09:00",
+              "mondayClose": "17:00",
+              "tuesdayOpen": "09:00",
+              "tuesdayClose": "17:00",
+              "wednesdayOpen": "09:00",
+              "wednesdayClose": "17:00",
+              "thursdayOpen": "09:00",
+              "thursdayClose": "17:00",
+              "fridayOpen": "09:00",
+              "fridayClose": "17:00",
+              "saturdayOpen": null,
+              "saturdayClose": null,
+              "sundayOpen": null,
+              "sundayClose": null
+            }
           }
       ]
     }

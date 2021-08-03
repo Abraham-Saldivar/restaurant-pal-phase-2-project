@@ -1,12 +1,13 @@
 import { useState } from "react";
 import Header from "./Header";
-function CreatePage () {
+function CreatePage ({user}) {
     const [formData, setFormData] = useState({
         name: "",
         description: "",
         backgroundImage: "",
         logoImage: "",
-        menu: "",
+        menuImage: "",
+        address: "",
         mapLink: "",
         mondayOpen: '09:00',
         mondayClose: '17:00',
@@ -36,12 +37,22 @@ function CreatePage () {
     function handleSubmit(e) {
         e.preventDefault();
         console.log(formData)
-        const submission = {
-            username: "postUser",
-            password: "hjkl",
-            projects: [formData]
-        }
-       //FETCH goes here
+        console.log(user)
+        fetch(`http://localhost:3000/users/${user}`, {
+            method: 'PATCH', 
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({data:formData})
+        })
+        .then(r => r.json())
+        .then(console.log)
+        // const submission = {
+        //     username: "postUser",
+        //     password: "hjkl",
+        //     projects: [formData]
+        
+       //FETCH PATCH goes here
     }
     return (
         <>
@@ -60,12 +71,15 @@ function CreatePage () {
                     <h4>Logo</h4>
                     <input onChange = {handleChange} type="text" name="logoImage" placeholder="Logo Image URL" value = {formData.logoImage}/>
                 <h3>Menu</h3><hr></hr>
-                    <h4>Menu</h4>
-                    <input onChange = {handleChange} type="text" name="menu" placeholder="Menu Image URL" value = {formData.menu}/>
+                    <h4>Menu Image</h4>
+                    <input onChange = {handleChange} type="text" name="menuImage" placeholder="Menu Image URL" value = {formData.menuImage}/>
                 <h3>Hours & Location</h3><hr></hr>
                     <h4>Google Maps Link</h4>
                     <input onChange = {handleChange} type="text" name="mapLink" placeholder="Google Maps URL" value = {formData.mapLink}/>
                     <br></br>
+                    <h4>Address</h4>
+                    <input onChange = {handleChange} type="text" name="address" placeholder="Address" value = {formData.address}/>
+
                     <br></br>
                     <label>
                         <span>Monday</span>

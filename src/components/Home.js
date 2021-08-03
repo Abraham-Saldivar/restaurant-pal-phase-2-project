@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
+import Header from "./Header";
 
 function Home () {
     return (
         <div className="hp-wrapper">
+            <Header />
             <div className="hp-banner"></div>
             <div className="hp-banner-text">
                 <h2 className="hp-banner-intro">Create a simple restaurant site in minutes.</h2>

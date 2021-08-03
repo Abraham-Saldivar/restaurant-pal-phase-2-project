@@ -1,7 +1,17 @@
-function Restaurant () {
+import RestaurantNav from "./RestaurantNav";
+import RestaurantHeader from "./RestaurantHeader";
+import RestaurantMenu from "./RestaurantMenu";
+import RestaurantHours from "./RestaurantHours";
+import RestaurantContact from "./RestaurantContact";
+
+function Restaurant ({ users }) {
     return (
         <div>
-            This is Restaurant
+            <RestaurantNav />
+            <RestaurantHeader />
+            <RestaurantMenu />
+            <RestaurantHours />
+            <RestaurantContact />
         </div>
     )
 }

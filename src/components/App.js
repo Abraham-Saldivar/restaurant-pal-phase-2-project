@@ -1,18 +1,21 @@
 
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import Header from "./Header";
 import Home from "./Home";
 import Login from "./Login";
 import CreateAccount from "./CreateAccount";
 import CreatePage from "./CreatePage";
 import Restaurant from "./Restaurant";
 import Footer from "./Footer";
+import { users } from "../db.json";
 
 function App() {
+// const [user, setUser] = useState("")
+// const restaurant = user?.restaurant
+
+
   return (
     <div>
-      <Header />
       <Switch>
         <Route path="/login">
           <Login />

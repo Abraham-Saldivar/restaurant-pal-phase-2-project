@@ -4,14 +4,24 @@ import RestaurantMenu from "./RestaurantMenu";
 import RestaurantHours from "./RestaurantHours";
 import RestaurantContact from "./RestaurantContact";
 
-function Restaurant ({ users }) {
+function Restaurant ({ restaurantData }) {
     return (
         <div>
-            <RestaurantNav />
-            <RestaurantHeader />
-            <RestaurantMenu />
-            <RestaurantHours />
-            <RestaurantContact />
+            <RestaurantNav 
+                restaurantData={restaurantData}
+            />
+            <RestaurantHeader 
+                restaurantData={restaurantData}
+            />
+            <RestaurantMenu 
+                restaurantData={restaurantData}
+            />
+            <RestaurantHours 
+                restaurantData={restaurantData}
+            />
+            <RestaurantContact 
+                restaurantData={restaurantData}
+            />
         </div>
     )
 }

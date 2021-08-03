@@ -1,9 +1,11 @@
-function RestaurantContact () {
+function RestaurantContact ({ restaurantData }) {
+    const { number, email } = restaurantData;
+    
     return (
         <div id="contact" className="restaurant-section">
             <h2 className="restaurant-name">Contact</h2>
-            <a href="tel:1234567890">123-456-7890</a>
-            <a href="mailto:info@gigis.la">info@gigis.la</a>
+            <a href={`tel:${number}`}>{number}</a>
+            <a href={`mailto:${email}`}>{email}</a>
         </div>
     )
 }

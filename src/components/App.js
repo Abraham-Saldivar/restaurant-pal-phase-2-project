@@ -7,6 +7,7 @@ import Login from "./Login";
 import CreateAccount from "./CreateAccount";
 import CreatePage from "./CreatePage";
 import Restaurant from "./Restaurant";
+import Footer from "./Footer";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           <Home />
         </Route>
       </Switch>
+      <Footer />
     </div>
   )
 }

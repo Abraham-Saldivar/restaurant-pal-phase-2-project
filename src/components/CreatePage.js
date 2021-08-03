@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Header from "./Header";
 
 function CreatePage () {
 
@@ -43,6 +44,7 @@ function CreatePage () {
 
     return (
         <>
+        <Header />
         <br></br>
         <b>This is the CreatePage</b>
         <div className="new-plant-form">

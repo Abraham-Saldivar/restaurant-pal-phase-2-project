@@ -1,4 +1,23 @@
-function RestaurantHours () {
+function RestaurantHours ({ restaurantData }) {
+    const { 
+        mapLink, 
+        address, 
+        mondayOpen, 
+        mondayClose,
+        tuesdayOpen,
+        tuesdayClose,
+        wednesdayOpen,
+        wednesdayClose,
+        thursdayOpen,
+        thursdayClose,
+        fridayOpen,
+        fridayClose,
+        saturdayOpen,
+        saturdayClose,
+        sundayOpen,
+        sundayClose,
+    } = restaurantData;
+    
     return (
         <div id="hours-location" className="restaurant-section">
             <h2 className="restaurant-name">Hours & Location</h2>
@@ -8,18 +27,18 @@ function RestaurantHours () {
             <div className="restaurant-info">
                 <div className="address-info">
                     <p className="info-header">Address</p>
-                    <a href="https://g.page/gigis-hollywood?share">904 N Sycamore Ave.<br/>Los Angeles, CA 90038</a>
+                    <a href="https://g.page/gigis-hollywood?share">{address}</a>
                 </div>
                 <div className="hours-info">
                     <p className="info-header">Hours</p>
                     <ul>
-                        <li><span className="hours-day">Monday</span>12pm - 6pm</li>
-                        <li><span className="hours-day">Tuesday</span>12pm - 6pm</li>
-                        <li><span className="hours-day">Wednesday</span>12pm - 6pm</li>
-                        <li><span className="hours-day">Thursday</span>12pm - 6pm</li>
-                        <li><span className="hours-day">Friday</span>12pm - 6pm</li>
-                        <li><span className="hours-day">Saturday</span>12pm - 6pm</li>
-                        <li><span className="hours-day">Sunday</span>12pm - 6pm</li>
+                        <li><span className="hours-day">Monday</span>{mondayOpen} - {mondayClose}</li>
+                        <li><span className="hours-day">Tuesday</span>{tuesdayOpen} - {tuesdayClose}</li>
+                        <li><span className="hours-day">Wednesday</span>{wednesdayOpen} - {wednesdayClose}</li>
+                        <li><span className="hours-day">Thursday</span>{thursdayOpen} - {thursdayClose}</li>
+                        <li><span className="hours-day">Friday</span>{fridayOpen} - {fridayClose}</li>
+                        <li><span className="hours-day">Saturday</span>{saturdayOpen} - {saturdayClose}</li>
+                        <li><span className="hours-day">Sunday</span>{sundayOpen} - {sundayClose}</li>
                     </ul>
                 </div>
                 

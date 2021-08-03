@@ -1,5 +1,5 @@
 
-import React from "react";
+import { useState, useEffect } from "react";
 import { Route, Switch } from "react-router-dom";
 import Home from "./Home";
 import Login from "./Login";
@@ -10,9 +10,19 @@ import Footer from "./Footer";
 import { users } from "../db.json";
 
 function App() {
-//const [user, setUser] = useState("")
-// const restaurant = user?.restaurant
 
+  const [user, setUser] = useState(3);
+  const [restaurantData, setRestaurantData] = useState([]);
+      
+  useEffect(() => {
+      fetch(`http://localhost:3000/users/${user}`)
+      .then(res=>res.json())
+      .then(e=>setRestaurantData(e.data))
+  },[])
+  console.log(restaurantData);
+
+
+  // const userRestName = 
 
   return (
     <div>
@@ -24,10 +34,12 @@ function App() {
           <CreateAccount />
         </Route>
         <Route path="/create-page">
-          <CreatePage />
+          <CreatePage user = {user}/>
         </Route>
-        <Route path="/restaurant">
-          <Restaurant />
+        <Route path={`/restaurant/${user}`}>
+          <Restaurant 
+            restaurantData={restaurantData}
+          />
         </Route>
         <Route exact path="/">
           <Home />

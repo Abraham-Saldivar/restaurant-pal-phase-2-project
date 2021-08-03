@@ -7,10 +7,11 @@
       "data": {
         "name": "Gigi's Hollywood",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur consectetur enim eget erat consectetur accumsan. Sed faucibus lectus orci, eget varius nunc dictum non.",
-        "background-image": "test.png",
-        "logo-image": "test.png",
-        "menu-image": "test.png",
-        "google-map-link": "https://g.page/gigis-hollywood?share",
+        "backgroundImage": "https://previews.123rf.com/images/annavaczi/annavaczi1501/annavaczi150100018/35325651-delicious-food-on-white-plate-close-up.jpg",
+        "logoImage": "https://i.stack.imgur.com/kJSXT.png",
+        "menuImage": "https://eadiescatering.com/wp-content/uploads/2021/03/Copy-of-Copy-of-Breakfast-Lunch-Menu_Rev-8.15v4-20.png",
+        "address": "123 Main St., New York, NY 10001",
+        "mapLink": "https://g.page/gigis-hollywood?share",
         "mondayOpen": "09:00",
         "mondayClose": "17:00",
         "tuesdayOpen": "09:00",
@@ -24,7 +25,9 @@
         "saturdayOpen": null,
         "saturdayClose": null,
         "sundayOpen": null,
-        "sundayClose": null
+        "sundayClose": null,
+        "number": "123-456-7890",
+        "email": "info@gigis.la"
       }
     },
     {
@@ -34,10 +37,11 @@
       "data": {
         "name": "Joey's Hollywood",
         "description": "Blah blah blah.",
-        "background-image": "test.png",
-        "logo-image": "test.png",
-        "menu-image": "test.png",
-        "google-map-link": "https://g.page/gigis-hollywood?share",
+        "backgroundImage": "test.png",
+        "logoImage": "test.png",
+        "menuImage": "test.png",
+        "address": "123 Main St., New York, NY 10001",
+        "mapLink": "https://g.page/gigis-hollywood?share",
         "mondayOpen": "09:00",
         "mondayClose": "17:00",
         "tuesdayOpen": "09:00",
@@ -51,18 +55,23 @@
         "saturdayOpen": null,
         "saturdayClose": null,
         "sundayOpen": null,
-        "sundayClose": null
+        "sundayClose": null,
+        "number": "123-456-7890",
+        "email": "info@gigis.la"
       }
     },
     {
-      "username": "asaldivar",
-      "password": "12345",
-      "id": 3
+      "username": "SampleUser3",
+      "id": 3,
+      "password": "zxcv",
+      "data": {}
     },
     {
-      "username": "asaldivar110",
-      "password": "Hello!",
-      "id": 4
+      "username": "SampleUser4",
+      "id": 4,
+      "password": "poiu",
+      "data": {}
+
     }
   ]
 }

@@ -11,9 +11,9 @@ import { users } from "../db.json";
 
 function App() {
 
-  const [user, setUser] = useState(3);
+  const [user, setUser] = useState(null);
   const [restaurantData, setRestaurantData] = useState([]);
-      
+  
   useEffect(() => {
       fetch(`http://localhost:3000/users/${user}`)
       .then(res=>res.json())
@@ -23,12 +23,12 @@ function App() {
 
 
   // const userRestName = 
-
+console.log(user)
   return (
     <div>
       <Switch>
         <Route path="/login">
-          <Login users={users}/>
+          <Login  setUser={setUser}/>
         </Route>
         <Route path="/create-account">
           <CreateAccount />

@@ -1,24 +1,33 @@
 import Header from "./Header";
-import React, { useState } from "react"
-import { users } from "../db.json";
+import React, { useEffect, useState } from "react"
 
-function Login ({users}) {
+
+function Login ({setUser}) {
      // const [firstName, setFirstName] = useState("")
     //const [lastName, setLastName] = useState("") 
-   const [username, setUsername] = useState("")
-    const [password, setPassword] = useState("")
-   
-    const handleSubmit = (e) => { 
+const [username, setUsername] = useState("")
+const [password, setPassword] = useState("")
+const [allData, setAllData]  = useState([])
+    
+useEffect(() => {
+fetch(`http://localhost:3000/users`)
+.then(res => res.json())
+.then(data => setAllData(data))
+},[])
+function handleSubmit(e) { 
         e.preventDefault()
+   
+   
+    const userObj = allData.find(userObj => userObj.username === username && userObj.password === password)
+    
+    { userObj  ?  setUser(userObj.id) : alert("Invalid Login")}
 
-        
-        
-       /*  const newLoginEntry = { username, password};
-       users.find({newLoginEntry}) => console.log({newLogin}) */
+}
 
-       
-    }
-    return (
+    
+
+
+return (
         <div>
         <form onSubmit={handleSubmit} className="new-account">
           <h2> Let's get you signed in.</h2>
@@ -34,4 +43,4 @@ function Login ({users}) {
     )
 }
 
-export default Login
+export default Login;

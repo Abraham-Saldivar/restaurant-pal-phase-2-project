@@ -10,13 +10,13 @@ import Footer from "./Footer";
 import { users } from "../db.json";
 
 function App() {
-  const [user, setUser] = useState("SampleUser");
+  const [user, setUser] = useState(3);
   const [restaurantData, setRestaurantData] = useState([]);
       
   useEffect(() => {
-      fetch(`http://localhost:3000/users?username=${user}`)
+      fetch(`http://localhost:3000/users/${user}`)
       .then(res=>res.json())
-      .then(e=>setRestaurantData(e[0].data))
+      .then(e=>setRestaurantData(e.data))
   },[])
   console.log(restaurantData);
 
@@ -32,7 +32,7 @@ function App() {
           <CreateAccount />
         </Route>
         <Route path="/create-page">
-          <CreatePage />
+          <CreatePage user = {user}/>
         </Route>
         <Route path={`/restaurant/${user}`}>
           <Restaurant 

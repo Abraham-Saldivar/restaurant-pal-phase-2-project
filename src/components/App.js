@@ -10,6 +10,7 @@ import Footer from "./Footer";
 import { users } from "../db.json";
 
 function App() {
+
   const [user, setUser] = useState(3);
   const [restaurantData, setRestaurantData] = useState([]);
       
@@ -20,13 +21,14 @@ function App() {
   },[])
   console.log(restaurantData);
 
+
   // const userRestName = 
 
   return (
     <div>
       <Switch>
         <Route path="/login">
-          <Login />
+          <Login users={users}/>
         </Route>
         <Route path="/create-account">
           <CreateAccount />

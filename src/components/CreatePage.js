@@ -22,7 +22,7 @@ function CreatePage () {
         saturdayOpen: '10:00',
         saturdayClose: '14:00',
         sundayOpen: '10:00',
-        sundayClose: '14:00',
+        sundayClose: '14:00',   
         number: "",
         email: ""
     })
@@ -39,6 +39,23 @@ function CreatePage () {
     function handleSubmit(e) {
         e.preventDefault();
         console.log(formData)
+        const submission = {
+            username: "postUser",
+            password: "hjkl",
+            projects: [formData]
+        }
+
+        fetch('http://localhost:3000/users', {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(submission)
+        })
+        .then(r => r.json())
+        .then(data => {
+            console.log(data)
+        })
     }
 
     return (

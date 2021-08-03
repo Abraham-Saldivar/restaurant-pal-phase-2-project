@@ -10,7 +10,7 @@ import Footer from "./Footer";
 import { users } from "../db.json";
 
 function App() {
-// const [user, setUser] = useState("")
+//const [user, setUser] = useState("")
 // const restaurant = user?.restaurant
 
 
@@ -18,7 +18,7 @@ function App() {
     <div>
       <Switch>
         <Route path="/login">
-          <Login />
+          <Login users={users}/>
         </Route>
         <Route path="/create-account">
           <CreateAccount />

@@ -7,7 +7,7 @@ import RestaurantContact from "./RestaurantContact";
 function Restaurant ({ users }) {
     return (
         <div>
-            <RestaurantNav individualUser={individualUser} />
+            <RestaurantNav />
             <RestaurantHeader />
             <RestaurantMenu />
             <RestaurantHours />

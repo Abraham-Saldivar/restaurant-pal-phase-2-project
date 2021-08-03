@@ -18,7 +18,7 @@ function App() {
     <div>
       <Switch>
         <Route path="/login">
-          <Login user={user} />
+          <Login />
         </Route>
         <Route path="/create-account">
           <CreateAccount />
@@ -27,9 +27,7 @@ function App() {
           <CreatePage />
         </Route>
         <Route path="/restaurant">
-          <Restaurant 
-            users={ users }
-          />
+          <Restaurant />
         </Route>
         <Route exact path="/">
           <Home />

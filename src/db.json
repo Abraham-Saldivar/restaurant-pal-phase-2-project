@@ -1,36 +1,60 @@
 {
-  "users": [
-    {
-      "username": "SampleUser",
-      "password": "asdf",
-      "projects": [
-          {
-            "id": 1,
-            "name": "Gigi's Hollywood",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur consectetur enim eget erat consectetur accumsan. Sed faucibus lectus orci, eget varius nunc dictum non.",
-            "background-image": "test.png",
-            "logo-image": "test.png",
-            "menu-image": "test.png",
-            "google-map-link": "https://g.page/gigis-hollywood?share",
-            "hours": {
-              "mondayOpen": "09:00",
-              "mondayClose": "17:00",
-              "tuesdayOpen": "09:00",
-              "tuesdayClose": "17:00",
-              "wednesdayOpen": "09:00",
-              "wednesdayClose": "17:00",
-              "thursdayOpen": "09:00",
-              "thursdayClose": "17:00",
-              "fridayOpen": "09:00",
-              "fridayClose": "17:00",
-              "saturdayOpen": null,
-              "saturdayClose": null,
-              "sundayOpen": null,
-              "sundayClose": null
-            }
-          }
-      ]
-    }
-    ]
-}
+  "users": 
+  [
+              {
+                "username":  "SampleUser",
+                "password": "asdf",
+                "data": 
+                        {
+                          "name": "Gigi's Hollywood",
+                          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur consectetur enim eget erat consectetur accumsan. Sed faucibus lectus orci, eget varius nunc dictum non.",
+                          "background-image": "test.png",
+                          "logo-image": "test.png",
+                          "menu-image": "test.png",
+                          "google-map-link": "https://g.page/gigis-hollywood?share",
+                          "mondayOpen": "09:00",
+                          "mondayClose": "17:00",
+                          "tuesdayOpen": "09:00",
+                          "tuesdayClose": "17:00",
+                          "wednesdayOpen": "09:00",
+                          "wednesdayClose": "17:00",
+                          "thursdayOpen": "09:00",
+                          "thursdayClose": "17:00",
+                          "fridayOpen": "09:00",
+                          "fridayClose": "17:00",
+                          "saturdayOpen": null,
+                          "saturdayClose": null,
+                          "sundayOpen": null,
+                          "sundayClose": null
+                          }
+                        },
+                        {
+                          "username":  "SampleUser2",
+                          "password": "qewr",
+                          "data": 
+                                  {
+                                    "name": "Joey's Hollywood",
+                                    "description": "Blah blah blah.",
+                                    "background-image": "test.png",
+                                    "logo-image": "test.png",
+                                    "menu-image": "test.png",
+                                    "google-map-link": "https://g.page/gigis-hollywood?share",
+                                    "mondayOpen": "09:00",
+                                    "mondayClose": "17:00",
+                                    "tuesdayOpen": "09:00",
+                                    "tuesdayClose": "17:00",
+                                    "wednesdayOpen": "09:00",
+                                    "wednesdayClose": "17:00",
+                                    "thursdayOpen": "09:00",
+                                    "thursdayClose": "17:00",
+                                    "fridayOpen": "09:00",
+                                    "fridayClose": "17:00",
+                                    "saturdayOpen": null,
+                                    "saturdayClose": null,
+                                    "sundayOpen": null,
+                                    "sundayClose": null
+                                    }
+                                  }
+        ]
+ }
   

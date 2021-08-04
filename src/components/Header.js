@@ -6,7 +6,7 @@ function Header () {
         <NavLink exact to="/"><h1>Restaurant Pal</h1></NavLink>
         <div className="navBar">
           <NavLink exact to="/login">Login</NavLink>
-          <NavLink exact to="/create-page">Get Started</NavLink>
+          <NavLink exact to="/create-account">Create Account</NavLink>
         </div>
     </nav>
   )

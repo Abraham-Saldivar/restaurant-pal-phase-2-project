@@ -21,7 +21,7 @@ function Home () {
                 <div className="sample-container">
                     <div className="sample-container">
                         <Link to="/restaurant/:id">
-                            <img src="https://i.ibb.co/cXbtQgL/Image-2021-08-02-at-2-26-29-PM.jpg" />
+                            <img src="https://i.ibb.co/cXbtQgL/Image-2021-08-02-at-2-26-29-PM.jpg" alt="Sliding"/>
                             <p className="hero-text">Momofuku</p>
                             <p className="location-text">New York, NY</p>
                         </Link>

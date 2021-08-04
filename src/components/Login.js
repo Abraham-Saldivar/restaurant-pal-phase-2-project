@@ -2,25 +2,31 @@ import Header from "./Header";
 import React, { useEffect, useState } from "react"
 
 
-function Login ({setUser}) {
-     // const [firstName, setFirstName] = useState("")
-    //const [lastName, setLastName] = useState("") 
-const [username, setUsername] = useState("")
-const [password, setPassword] = useState("")
-const [allData, setAllData]  = useState([])
+function Login ({setUser, setRestaurantData}) {
+
+    const [username, setUsername] = useState("")
+    const [password, setPassword] = useState("")
+    const [allData, setAllData]  = useState([])
     
-useEffect(() => {
-fetch(`http://localhost:3000/users`)
-.then(res => res.json())
-.then(data => setAllData(data))
-},[])
-function handleSubmit(e) { 
-        e.preventDefault()
-   
-   
-    const userObj = allData.find(userObj => userObj.username === username && userObj.password === password)
+    useEffect(() => {
+        fetch(`http://localhost:3000/users`)
+        .then(res => res.json())
+        .then(data => setAllData(data))
+        },[])
     
-    { userObj  ?  setUser(userObj.id) : alert("Invalid Login")}
+    function handleSubmit(e) { 
+            e.preventDefault()
+            
+            const userObj = allData.find(userObj => userObj.username === username && userObj.password === password)
+    
+            { userObj  ?  setUser(userObj.id) : alert("Invalid Login")}
+
+            // useEffect(() => {
+            //     fetch(`http://localhost:3000/users/`)
+            //     .then(res=>res.json())
+            //     .then(e=>setRestaurantData(e.data))
+            //     .then(e=>console.log(e[user].data))
+            // },[])
 
 }
 
@@ -29,6 +35,7 @@ function handleSubmit(e) {
 
 return (
         <div>
+        <Header />
         <form onSubmit={handleSubmit} className="new-account">
           <h2> Let's get you signed in.</h2>
               <label> 

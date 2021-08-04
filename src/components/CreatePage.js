@@ -1,6 +1,8 @@
 import { useState } from "react";
 import Header from "./Header";
-function CreatePage ({user}) {
+// import Restaurant from "./Restaurant";
+
+function CreatePage ({ user, restaurantData, setRestaurantData }) {
     const [formData, setFormData] = useState({
         name: "",
         description: "",
@@ -57,10 +59,9 @@ function CreatePage ({user}) {
     return (
         <>
         <Header />
-        <br></br>
-        <b>This is the CreatePage</b>
-        <div className="new-plant-form">
-            <form onSubmit = {handleSubmit}>
+        <div className="new-form">
+            <div className="form-aside-container">
+                <form onSubmit = {handleSubmit}>
                 <h3>About</h3><hr></hr>
                     <h4>Restaurant Name</h4>
                     <input onChange = {handleChange} type="text" name="name" placeholder= "Acme Pizza co" value = {formData.name}/>
@@ -181,6 +182,13 @@ function CreatePage ({user}) {
                     <br></br>
                     <button  type="submit">Save</button>
                 </form>
+            </div>
+            <div className="preview-aside-container">
+            {/* <Restaurant 
+                restaurantData={restaurantData}
+                setRestaurantData={setRestaurantData}
+            /> */}
+            </div>
          </div>
         </>
     )

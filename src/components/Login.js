@@ -33,13 +33,15 @@ function logIn(userObj) {
     setUser(userObj.id)
     history.push("/create-page");
 }
-    
+    function handleNewAccount(){
+        history.push("/create-account")
+    }
 
 
 return (
         <div>
         <Header />
-        <form onSubmit={handleSubmit} className="new-account">
+        <form onSubmit={handleSubmit} className="login">
           <h2> Let's get you signed in.</h2>
               <label> 
                   <input placeholder="Username" value={username} type="text" onChange={(e) => setUsername(e.target.value)}/>
@@ -48,6 +50,7 @@ return (
               <input placeholder="Password" value={password} type="password" onChange={(e) => setPassword(e.target.value)} />
               </label>
               <input type="submit" value="Login" />
+              <button onClick={handleNewAccount}>Don't have a account? Sign up here.</button>
       </form>
   </div>
     )

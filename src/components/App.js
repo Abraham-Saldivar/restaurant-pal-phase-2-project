@@ -13,9 +13,6 @@ function App() {
   //^^^set user to id of a sample user to start
   const [restaurantData, setRestaurantData] = useState([]);
 
-  console.log(restaurantData)
-  console.log(user)
-
   return (
     <div>
       <Switch>
@@ -34,10 +31,11 @@ function App() {
           <CreatePage 
             user = {user}
             restaurantData={restaurantData}
+            setRestaurantData={setRestaurantData}
           />
         </Route>
         <Route path="/restaurant/:id">
-        <Restaurant 
+          <Restaurant 
             restaurantData={restaurantData}
             setRestaurantData={setRestaurantData}
           /> 

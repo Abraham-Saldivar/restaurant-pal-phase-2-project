@@ -11,10 +11,9 @@ function Restaurant ({ restaurantData, setRestaurantData }) {
 
     useEffect(() => {
         fetch(`http://localhost:3000/users/${id}`)
-        // fetch(`http://localhost:3000/users/1`)
         .then(res=>res.json())
         .then(e=>setRestaurantData(e.data))
-    },[id])
+    },[])
 
     return (
         <div>

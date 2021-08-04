@@ -9,12 +9,12 @@ body {
     border-radius: 100px;
     text-decoration: none;
     color: white;
-    padding: 16px 40px;
+    padding: 16px 24px;
     text-transform: uppercase;
     letter-spacing: 1px;
     display: block;
     margin: 0 auto;
-    width: 120px;
+    width: 180px;
     text-align: center;
     font-weight: 600;
 }
@@ -54,7 +54,7 @@ h1 {
 }
 
 .hp-banner {
-    background: url("https://i.ibb.co/2YT88v6/moving-background.png") repeat-x;
+    background: url("https://i.ibb.co/YXFCVdV/moving-background.png") repeat-x;
     height: 500px;
     width: 2916px;
     animation: slide 60s linear infinite;

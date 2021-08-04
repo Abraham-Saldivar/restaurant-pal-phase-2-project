@@ -32,10 +32,10 @@ function App() {
           />
         </Route>
         <Route path="/restaurant/:id">
-          <Restaurant 
+        <Restaurant 
             restaurantData={restaurantData}
             setRestaurantData={setRestaurantData}
-          />
+          /> 
         </Route>
         <Route exact path="/">
           <Home />

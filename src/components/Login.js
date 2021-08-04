@@ -1,35 +1,38 @@
 import Header from "./Header";
 import React, { useEffect, useState } from "react"
+import { useHistory } from "react-router-dom";
 
 
 function Login ({setUser, setRestaurantData}) {
 
-    const [username, setUsername] = useState("")
-    const [password, setPassword] = useState("")
-    const [allData, setAllData]  = useState([])
-    
-    useEffect(() => {
-        fetch(`http://localhost:3000/users`)
-        .then(res => res.json())
-        .then(data => setAllData(data))
-        },[])
-    
-    function handleSubmit(e) { 
-            e.preventDefault()
-            
-            const userObj = allData.find(userObj => userObj.username === username && userObj.password === password)
-    
-            { userObj  ?  setUser(userObj.id) : alert("Invalid Login")}
+     // const [firstName, setFirstName] = useState("")
+    //const [lastName, setLastName] = useState("") 
+const [username, setUsername] = useState("")
+const [password, setPassword] = useState("")
+const [allData, setAllData]  = useState([])
+let history = useHistory();
 
-            // useEffect(() => {
-            //     fetch(`http://localhost:3000/users/`)
-            //     .then(res=>res.json())
-            //     .then(e=>setRestaurantData(e.data))
-            //     .then(e=>console.log(e[user].data))
-            // },[])
+    
+useEffect(() => {
+fetch(`http://localhost:3000/users`)
+.then(res => res.json())
+.then(data => setAllData(data))
+},[])
 
+
+function handleSubmit(e) { 
+    e.preventDefault()
+    const userObj = allData.find(userObj => userObj.username === username && userObj.password === password)
+    { userObj  ?  logIn(userObj) : alert("Invalid Login")}
 }
 
+function logIn(userObj) {
+    console.log('login! user id: ' + userObj.id)
+    console.log(userObj)
+    setRestaurantData(userObj.data)
+    setUser(userObj.id)
+    history.push("/create-page");
+}
     
 
 

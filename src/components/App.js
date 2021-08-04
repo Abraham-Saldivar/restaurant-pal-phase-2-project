@@ -9,17 +9,26 @@ import Footer from "./Footer";
 import TestRestaurant from "./TestRestaurant"
 
 function App() {
+
   const [user, setUser] = useState(null);
+  //^^^set user to id of a sample user to start
   const [restaurantData, setRestaurantData] = useState([]);
   
+  useEffect(() => {
+      console.log('useEffect fired')
+      fetch(`http://localhost:3000/users/${user}`)
+      .then(res=>res.json())
+      .then(e=>setRestaurantData(e.data))
+  },[])
+
+
+  // const userRestName = 
+
   return (
     <div>
       <Switch>
         <Route path="/login">
-          <Login  
-            setUser={setUser}
-            setRestaurantData={setRestaurantData}
-          />
+
         </Route>
         <Route path="/create-account">
           <CreateAccount />

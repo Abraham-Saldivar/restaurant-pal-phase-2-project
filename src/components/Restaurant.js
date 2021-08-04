@@ -7,7 +7,7 @@ import RestaurantHours from "./RestaurantHours";
 import RestaurantContact from "./RestaurantContact";
 
 function Restaurant ({ restaurantData, setRestaurantData }) {
-    const { id }:{ id:string } = useParams();
+    const { id } = useParams();
 
     useEffect(() => {
         fetch(`http://localhost:3000/users/${id}`)

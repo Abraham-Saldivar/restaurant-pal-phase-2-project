@@ -95,7 +95,7 @@
       "id": 4,
       "password": "ilovekazunori",
       "data": {
-        "name": "KazuNori: The Original Hand Roll Bar",
+        "name": "This is a test for Kazunori",
         "description": "Functional, masculine setting for Japanese temaki (hand-rolls) from a beloved sushi restaurateur.",
         "backgroundImage": "https://www.handrollbar.com/wp-content/uploads/2019/10/Sugarfish-Food-Proof-482A.jpg",
         "logoImage": "https://www.handrollbar.com/wp-content/uploads/2019/10/KN18_v_solo_seal_red_whitetext.png",
@@ -179,6 +179,66 @@
         "number": "310-362-6115",
         "email": "info@republiquela.com"
       }
+    },
+    {
+      "username": "uniqueman",
+      "password": "123",
+      "data": {
+        "name": "Gigi's Hollywood",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur consectetur enim eget erat consectetur accumsan. Sed faucibus lectus orci, eget varius nunc dictum non.",
+        "backgroundImage": "https://previews.123rf.com/images/annavaczi/annavaczi1501/annavaczi150100018/35325651-delicious-food-on-white-plate-close-up.jpg",
+        "logoImage": "https://i.stack.imgur.com/kJSXT.png",
+        "menuImage": "https://eadiescatering.com/wp-content/uploads/2021/03/Copy-of-Copy-of-Breakfast-Lunch-Menu_Rev-8.15v4-20.png",
+        "address": "123 Main St., New York, NY 10001",
+        "mapLink": "https://g.page/gigis-hollywood?share",
+        "mondayOpen": "09:00",
+        "mondayClose": "17:00",
+        "tuesdayOpen": "09:00",
+        "tuesdayClose": "17:00",
+        "wednesdayOpen": "09:00",
+        "wednesdayClose": "17:00",
+        "thursdayOpen": "09:00",
+        "thursdayClose": "17:00",
+        "fridayOpen": "09:00",
+        "fridayClose": "17:00",
+        "saturdayOpen": null,
+        "saturdayClose": null,
+        "sundayOpen": null,
+        "sundayClose": null,
+        "number": "123-456-7890",
+        "email": "info@gigis.la"
+      },
+      "id": 7
+    },
+    {
+      "username": "john",
+      "password": "ilovejohn",
+      "data": {
+        "name": "i love ice cream",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur consectetur enim eget erat consectetur accumsan. Sed faucibus lectus orci, eget varius nunc dictum non.",
+        "backgroundImage": "https://thumbs.dreamstime.com/z/various-varieties-ice-cream-cones-various-varieties-ice-cream-cones-mint-blueberry-strawberry-pistachio-cherry-158155767.jpg",
+        "logoImage": "https://i.stack.imgur.com/kJSXT.png",
+        "menuImage": "https://eadiescatering.com/wp-content/uploads/2021/03/Copy-of-Copy-of-Breakfast-Lunch-Menu_Rev-8.15v4-20.png",
+        "address": "123 Main St., New York, NY 10001",
+        "mapLink": "https://g.page/gigis-hollywood?share",
+        "mondayOpen": "09:00",
+        "mondayClose": "17:00",
+        "tuesdayOpen": "09:00",
+        "tuesdayClose": "17:00",
+        "wednesdayOpen": "09:00",
+        "wednesdayClose": "17:00",
+        "thursdayOpen": "09:00",
+        "thursdayClose": "17:00",
+        "fridayOpen": "09:00",
+        "fridayClose": "17:00",
+        "saturdayOpen": null,
+        "saturdayClose": null,
+        "sundayOpen": null,
+        "sundayClose": null,
+        "number": "123-456-7890",
+        "email": "info@gigis.la"
+      },
+      "id": 8
     }
   ]
 }

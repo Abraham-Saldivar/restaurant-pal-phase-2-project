@@ -26,30 +26,30 @@ function CreateAccount({ setUser, setRestaurantData }) {
     const handleSubmit = (e) => { 
         e.preventDefault()
         const data = {
-                        name: "Gigi's Hollywood",
-                        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur consectetur enim eget erat consectetur accumsan. Sed faucibus lectus orci, eget varius nunc dictum non.",
-                        backgroundImage: "https://previews.123rf.com/images/annavaczi/annavaczi1501/annavaczi150100018/35325651-delicious-food-on-white-plate-close-up.jpg",
-                        logoImage: "https://i.stack.imgur.com/kJSXT.png",
-                        menuImage: "https://eadiescatering.com/wp-content/uploads/2021/03/Copy-of-Copy-of-Breakfast-Lunch-Menu_Rev-8.15v4-20.png",
-                        address: "123 Main St., New York, NY 10001",
-                        mapLink: "https://g.page/gigis-hollywood?share",
-                        mondayOpen: "09:00",
-                        mondayClose: "17:00",
-                        tuesdayOpen: "09:00",
-                        tuesdayClose: "17:00",
-                        wednesdayOpen: "09:00",
-                        wednesdayClose: "17:00",
-                        thursdayOpen: "09:00",
-                        thursdayClose: "17:00",
-                        fridayOpen: "09:00",
-                        fridayClose: "17:00",
-                        saturdayOpen: null,
-                        saturdayClose: null,
-                        sundayOpen: null,
-                        sundayClose: null,
-                        number: "123-456-7890",
-                        email: "info@gigis.la"
-                }
+            name: "Your Restaurant Name Here",
+            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur consectetur enim eget erat consectetur accumsan. Sed faucibus lectus orci, eget varius nunc dictum non.",
+            backgroundImage: "https://previews.123rf.com/images/annavaczi/annavaczi1501/annavaczi150100018/35325651-delicious-food-on-white-plate-close-up.jpg",
+            logoImage: "https://i.stack.imgur.com/kJSXT.png",
+            menuImage: "https://eadiescatering.com/wp-content/uploads/2021/03/Copy-of-Copy-of-Breakfast-Lunch-Menu_Rev-8.15v4-20.png",
+            address: "123 Main St., New York, NY 10001",
+            mapLink: "https://g.page/gigis-hollywood?share",
+            mondayOpen: "09:00",
+            mondayClose: "17:00",
+            tuesdayOpen: "09:00",
+            tuesdayClose: "17:00",
+            wednesdayOpen: "09:00",
+            wednesdayClose: "17:00",
+            thursdayOpen: "09:00",
+            thursdayClose: "17:00",
+            fridayOpen: "09:00",
+            fridayClose: "17:00",
+            saturdayOpen: null,
+            saturdayClose: null,
+            sundayOpen: null,
+            sundayClose: null,
+            number: "123-456-7890",
+            email: "info@gigis.la"
+        }
 
         const newAccount = { username, password, data };
         console.log(newAccount)

@@ -1,60 +1,35 @@
-import { useState } from "react";
+import { useHistory } from "react-router-dom";
 import Header from "./Header";
-// import Restaurant from "./Restaurant";
+import RestaurantNav from "./RestaurantNav";
+import RestaurantHeader from "./RestaurantHeader";
+import RestaurantMenu from "./RestaurantMenu";
+import RestaurantHours from "./RestaurantHours";
+import RestaurantContact from "./RestaurantContact";
 
 function CreatePage ({ user, restaurantData, setRestaurantData }) {
-    const [formData, setFormData] = useState({
-        name: "",
-        description: "",
-        backgroundImage: "",
-        logoImage: "",
-        menuImage: "",
-        address: "",
-        mapLink: "",
-        mondayOpen: '09:00',
-        mondayClose: '17:00',
-        tuesdayOpen: '09:00',
-        tuesdayClose: '17:00',
-        wednesdayOpen: '09:00',
-        wednesdayClose: '17:00',
-        thursdayOpen: '09:00',
-        thursdayClose: '17:00',
-        fridayOpen: '09:00',
-        fridayClose: '17:00',
-        saturdayOpen: '10:00',
-        saturdayClose: '14:00',
-        sundayOpen: '10:00',
-        sundayClose: '14:00',
-        number: "",
-        email: ""
-    })
+    let history = useHistory();
+    
     function handleChange(e) {
-        console.log(e.target.name + ' changed!')
-        setFormData(
-            {...formData,
+        setRestaurantData(
+            {...restaurantData,
             [e.target.name]: e.target.value
             }
         )
     }
+
     function handleSubmit(e) {
         e.preventDefault();
-        console.log(formData)
-        console.log(user)
+
         fetch(`http://localhost:3000/users/${user}`, {
             method: 'PATCH', 
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify({data:formData})
+            body: JSON.stringify({data:restaurantData})
         })
         .then(r => r.json())
-        .then(console.log)
-        // const submission = {
-        //     username: "postUser",
-        //     password: "hjkl",
-        //     projects: [formData]
-        
-       //FETCH PATCH goes here
+        history.push(`/restaurant/${user}`);
+
     }
     return (
         <>
@@ -64,22 +39,22 @@ function CreatePage ({ user, restaurantData, setRestaurantData }) {
                 <form onSubmit = {handleSubmit}>
                 <h3>About</h3><hr></hr>
                     <h4>Restaurant Name</h4>
-                    <input onChange = {handleChange} type="text" name="name" placeholder= "Acme Pizza co" value = {formData.name}/>
+                    <input onChange = {handleChange} type="text" name="name" placeholder= "Acme Pizza co" value = {restaurantData.name} required/>
                     <h4>Restaurant Description</h4>
-                    <input onChange = {handleChange} type="text" name="description" placeholder="Grungy bar with a lively atmosphere" value = {formData.description}/>
+                    <input onChange = {handleChange} type="text" name="description" placeholder="Grungy bar with a lively atmosphere" value = {restaurantData.description} required/>
                     <h4>Background Image</h4>
-                    <input onChange = {handleChange} type="text" name="backgroundImage" placeholder="Background Image URL" value = {formData.backgroundImage}/>
+                    <input onChange = {handleChange} type="text" name="backgroundImage" placeholder="Background Image URL" value = {restaurantData.backgroundImage} required/>
                     <h4>Logo</h4>
-                    <input onChange = {handleChange} type="text" name="logoImage" placeholder="Logo Image URL" value = {formData.logoImage}/>
+                    <input onChange = {handleChange} type="text" name="logoImage" placeholder="Logo Image URL" value = {restaurantData.logoImage} required/>
                 <h3>Menu</h3><hr></hr>
                     <h4>Menu Image</h4>
-                    <input onChange = {handleChange} type="text" name="menuImage" placeholder="Menu Image URL" value = {formData.menuImage}/>
+                    <input onChange = {handleChange} type="text" name="menuImage" placeholder="Menu Image URL" value = {restaurantData.menuImage} required/>
                 <h3>Hours & Location</h3><hr></hr>
                     <h4>Google Maps Link</h4>
-                    <input onChange = {handleChange} type="text" name="mapLink" placeholder="Google Maps URL" value = {formData.mapLink}/>
+                    <input onChange = {handleChange} type="text" name="mapLink" placeholder="Google Maps URL" value = {restaurantData.mapLink} required/>
                     <br></br>
                     <h4>Address</h4>
-                    <input onChange = {handleChange} type="text" name="address" placeholder="Address" value = {formData.address}/>
+                    <input onChange = {handleChange} type="text" name="address" placeholder="Address" value = {restaurantData.address} required/>
 
                     <br></br>
                     <label>
@@ -90,9 +65,9 @@ function CreatePage ({ user, restaurantData, setRestaurantData }) {
                         onChange={handleChange}
                         checked={false}
                         />
-                        <input onChange = {handleChange} type="time" name="mondayOpen" value= {formData.mondayOpen} />
+                        <input onChange = {handleChange} type="time" name="mondayOpen" value= {restaurantData.mondayOpen} />
                         to
-                        <input onChange = {handleChange} type="time" name="mondayClose" value= {formData.mondayClose}/>
+                        <input onChange = {handleChange} type="time" name="mondayClose" value= {restaurantData.mondayClose}/>
                     </label>
                     <br></br>
                     <label>
@@ -103,9 +78,9 @@ function CreatePage ({ user, restaurantData, setRestaurantData }) {
                         onChange={handleChange}
                         checked={false}
                         />
-                        <input onChange = {handleChange} type="time" name="tuesdayOpen" value= {formData.tuesdayOpen} />
+                        <input onChange = {handleChange} type="time" name="tuesdayOpen" value= {restaurantData.tuesdayOpen} />
                         to
-                        <input onChange = {handleChange} type="time" name="tuesdayClose" value= {formData.tuesdayClose}/>
+                        <input onChange = {handleChange} type="time" name="tuesdayClose" value= {restaurantData.tuesdayClose}/>
                     </label>
                     <br></br>
                     <label>
@@ -116,9 +91,9 @@ function CreatePage ({ user, restaurantData, setRestaurantData }) {
                         onChange={handleChange}
                         checked={false}
                         />
-                        <input onChange = {handleChange} type="time" name="wednesdayOpen" value= {formData.wednesdayOpen} />
+                        <input onChange = {handleChange} type="time" name="wednesdayOpen" value= {restaurantData.wednesdayOpen} />
                         to
-                        <input onChange = {handleChange} type="time" name="wednesdayClose" value= {formData.wednesdayClose}/>
+                        <input onChange = {handleChange} type="time" name="wednesdayClose" value= {restaurantData.wednesdayClose}/>
                     </label>
                     <br></br>
                     <label>
@@ -129,9 +104,9 @@ function CreatePage ({ user, restaurantData, setRestaurantData }) {
                         onChange={handleChange}
                         checked={false}
                         />
-                        <input onChange = {handleChange} type="time" name="thursdayOpen" value= {formData.thursdayOpen} />
+                        <input onChange = {handleChange} type="time" name="thursdayOpen" value= {restaurantData.thursdayOpen} />
                         to
-                        <input onChange = {handleChange} type="time" name="thursdayClose" value= {formData.thursdayClose}/>
+                        <input onChange = {handleChange} type="time" name="thursdayClose" value= {restaurantData.thursdayClose}/>
                     </label>
                     <br></br>
                     <label>
@@ -142,9 +117,9 @@ function CreatePage ({ user, restaurantData, setRestaurantData }) {
                         onChange={handleChange}
                         checked={false}
                         />
-                        <input onChange = {handleChange} type="time" name="fridayOpen" value= {formData.fridayOpen} />
+                        <input onChange = {handleChange} type="time" name="fridayOpen" value= {restaurantData.fridayOpen} />
                         to
-                        <input onChange = {handleChange} type="time" name="fridayClose" value= {formData.fridayClose}/>
+                        <input onChange = {handleChange} type="time" name="fridayClose" value= {restaurantData.fridayClose}/>
                     </label>
                     <br></br>
                     <label>
@@ -155,9 +130,9 @@ function CreatePage ({ user, restaurantData, setRestaurantData }) {
                         onChange={handleChange}
                         checked={false}
                         />
-                        <input onChange = {handleChange} type="time" name="saturdayOpen" value= {formData.saturdayOpen} />
+                        <input onChange = {handleChange} type="time" name="saturdayOpen" value= {restaurantData.saturdayOpen} />
                         to
-                        <input onChange = {handleChange} type="time" name="saturdayClose" value= {formData.saturdayClose}/>
+                        <input onChange = {handleChange} type="time" name="saturdayClose" value= {restaurantData.saturdayClose}/>
                     </label>
                     <br></br>
                     <label>
@@ -168,26 +143,39 @@ function CreatePage ({ user, restaurantData, setRestaurantData }) {
                         onChange={handleChange}
                         checked={false}
                         />
-                        <input onChange = {handleChange} type="time" name="sundayOpen" value= {formData.sundayOpen} />
+                        <input onChange = {handleChange} type="time" name="sundayOpen" value= {restaurantData.sundayOpen} />
                         to
-                        <input onChange = {handleChange} type="time" name="sundayClose" value= {formData.sundayClose}/>
+                        <input onChange = {handleChange} type="time" name="sundayClose" value= {restaurantData.sundayClose}/>
                     </label>
                     <br></br>
                     <h3>Contact</h3><hr></hr>
                     <h4>Phone Number</h4>
-                    <input onChange = {handleChange} type="tel" name="number" placeholder='555-123-4567' value = {formData.number}/>
+                    <input onChange = {handleChange} type="tel" name="number" placeholder='555-123-4567' value = {restaurantData.number} required/>
                     <h4>Email Address</h4>
-                    <input onChange = {handleChange} type="email" name="email" placeholder='restaurant@gmail.com' value = {formData.email}/>
+                    <input onChange = {handleChange} type="email" name="email" placeholder='restaurant@gmail.com' value = {restaurantData.email} required/>
                     <br></br>
                     <br></br>
-                    <button  type="submit">Save</button>
+                    <button  type="submit">Save & Launch Page</button>
                 </form>
             </div>
             <div className="preview-aside-container">
-            {/* <Restaurant 
+            <div>
+            <RestaurantNav 
                 restaurantData={restaurantData}
-                setRestaurantData={setRestaurantData}
-            /> */}
+            />
+            <RestaurantHeader 
+                restaurantData={restaurantData}
+            />
+            <RestaurantMenu 
+                restaurantData={restaurantData}
+            />
+            <RestaurantHours 
+                restaurantData={restaurantData}
+            />
+            <RestaurantContact 
+                restaurantData={restaurantData}
+            />
+            </div>
             </div>
          </div>
         </>

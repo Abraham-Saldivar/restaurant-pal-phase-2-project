@@ -7,7 +7,7 @@ const userObj = allData.find(userObj => userObj.username === username && userObj
 { userObj  ?  logIn(userObj) : alert("Invalid Login")}
 }
  */
-function CreateAccount() {
+function CreateAccount({ setUser, setRestaurantData }) {
      const [username, setUsername] = useState("")
      const [password, setPassword] = useState("")
      const [allData, setAllData]  = useState([])
@@ -53,10 +53,10 @@ function CreateAccount() {
 
         const newAccount = { username, password, data };
         console.log(newAccount)
-        {allData.find(userObj => userObj.username === username)? alert('user already exists'):  createAndLogin()}
+        const userObj = allData.find(userObj => userObj.username === username)
+        {userObj? alert('User already exists. Login!'):  createAndLogin()}
 
         
-        // {!userExists && password ? createAndLogin() : alert("username or password is invalid")}
         
         function createAndLogin() {
             console.log('createAndLogin fired')
@@ -66,12 +66,15 @@ function CreateAccount() {
                 headers: {"Content-Type" : "application/json"}, 
                 body: JSON.stringify(newAccount)
             })
-              history.push("/create-page");
+            .then(r => r.json())
+            .then(res => {
+                setRestaurantData(res.data)
+                setUser(res.id)
+            })
+            history.push("/create-page");
         }
-       
-      
-          
     }
+
     function handleExistingAccount(){
         history.push("/login")
     }

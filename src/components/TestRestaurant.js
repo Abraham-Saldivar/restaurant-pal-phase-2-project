@@ -6,7 +6,7 @@ import RestaurantMenu from "./RestaurantMenu";
 import RestaurantHours from "./RestaurantHours";
 import RestaurantContact from "./RestaurantContact";
 
-function Restaurant ({ restaurantData, setRestaurantData }) {
+function TestRestaurant ({ restaurantData, setRestaurantData }) {
     const { id }:{ id:string } = useParams();
 
     useEffect(() => {
@@ -17,15 +17,15 @@ function Restaurant ({ restaurantData, setRestaurantData }) {
 
     return (
         <div>
-            <RestaurantNav 
+            {/* <RestaurantNav 
                 restaurantData={restaurantData}
-            />
-            <RestaurantHeader 
+            /> */}
+            {/* {/* <RestaurantHeader 
                 restaurantData={restaurantData}
-            />
-            <RestaurantMenu 
+            /> */}
+            {/* <RestaurantMenu 
                 restaurantData={restaurantData}
-            />
+            /> */}
             <RestaurantHours 
                 restaurantData={restaurantData}
             />
@@ -36,4 +36,4 @@ function Restaurant ({ restaurantData, setRestaurantData }) {
     )
 }
 
-export default Restaurant
+export default TestRestaurant

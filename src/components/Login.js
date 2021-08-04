@@ -4,6 +4,7 @@ import { useHistory } from "react-router-dom";
 
 
 function Login ({setUser, setRestaurantData}) {
+
      // const [firstName, setFirstName] = useState("")
     //const [lastName, setLastName] = useState("") 
 const [username, setUsername] = useState("")
@@ -37,6 +38,7 @@ function logIn(userObj) {
 
 return (
         <div>
+        <Header />
         <form onSubmit={handleSubmit} className="new-account">
           <h2> Let's get you signed in.</h2>
               <label> 

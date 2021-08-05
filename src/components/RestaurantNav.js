@@ -1,9 +1,6 @@
-function RestaurantHeader ({ restaurantData }) {
-  const { logoImage } = restaurantData;
-    
+function RestaurantHeader () {    
   return (
     <nav className="restaurant-nav">
-      <img src={logoImage} alt="restaurant logo" className="restaurant-logo" />
       <div className="restaurant-links">
         <a href="#about">About</a>
         <a href="#menu">Menu</a>

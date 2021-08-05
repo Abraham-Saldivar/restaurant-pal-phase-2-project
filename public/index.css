@@ -2,10 +2,17 @@
 body {
     font-family: "Helvetica";
     font-size: 14px;
+    margin: 0;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
 }
 
 .styled-button {
     background: #D1770A;
+    border: none;
     border-radius: 100px;
     text-decoration: none;
     color: white;
@@ -17,6 +24,11 @@ body {
     width: 180px;
     text-align: center;
     font-weight: 600;
+    cursor: pointer;
+}
+
+input {
+    font-size: 16px;
 }
 
 /* Nav Styling */
@@ -24,6 +36,12 @@ body {
     background-color: #FDF9EB;
     padding: 24px 40px;
     display: flex;
+}
+
+.active {
+    color: #D1770A !important;
+    text-decoration: underline;
+    font-weight: 700;
 }
 
 nav > * {
@@ -43,9 +61,60 @@ h1 {
 }
 
 .navBar a {
-    color: #75736B;
     margin-left: 24px;
     float: right;
+    color: #75736B;
+}
+
+/* Create Account/Login Styling */
+.login-container {
+    width: 50%;
+    margin: 80px auto;
+    max-width: 420px;
+}
+
+.login-header {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 24px;
+    line-height: 140%;
+    padding-bottom: 16px;
+    border-bottom: 1px solid black;
+}
+
+.login-form-container {
+    padding-top: 24px;
+}
+
+.login-form-container > * {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.login-form-label {
+    margin-bottom: 8px;
+}
+
+.login-form-input {
+    margin-bottom: 24px;
+    width: calc(100% - 32px);
+    border: none;
+    background-color: #f5f5f5;
+    padding: 14px 16px;
+}
+
+.login-container .styled-button {
+    width: 100%
+}
+
+.login-sign-button {
+    border: none;
+    background-color: transparent;
+    width: 100%;
+    text-decoration: underline;
+    font-family: Helvetica;
+    font-size: 14px;
+    padding-top: 12px;
+    cursor: pointer;
 }
 
 /* Homepage Styling */
@@ -71,7 +140,7 @@ h1 {
 
 .hp-banner-text {
     background: linear-gradient(90deg, rgba(253,249,235,0.9) 0%, rgba(253,249,235,0.9) 86%, rgba(253,249,235,0) 100%);
-    padding: 56px 80px 160px 80px;
+    padding: 56px 80px 190px 80px;
     width: calc(50vw - 40px);
     position: absolute;
     margin-top: -420px;
@@ -92,7 +161,7 @@ h1 {
 
 .mission-banner {
     width: 75vw;
-    padding: 120px 40px;
+    padding: 140px 40px;
     margin: 0 auto;
 }
 
@@ -160,6 +229,31 @@ h1 {
     overflow: scroll;
 }
 
+.form-aside-container .hero-text {
+    text-align: left;
+    padding-bottom: 8px;
+    border-bottom: 1px solid black;
+    margin-bottom: 16px;
+}
+
+.form-aside-container label {
+    display: block;
+    margin-bottom: 8px;   
+}
+
+.form-aside-container input {
+    display: block;
+    width: calc(100% - 30px);
+    border: none;
+    background-color: #f5f5f5;
+    padding: 16px 16px;
+    margin-bottom: 16px;
+}
+
+.form-aside-container .styled-button {
+    width: 100%
+}
+
 .preview-aside-container {
     display: inline-block;
     width: calc(60vw - 80px);
@@ -167,6 +261,81 @@ h1 {
     background-color: #f5f5f5;
     height: 1000px;
     padding: 40px;
+}
+
+.preview-browser-container {
+    background-color: white;
+    border-radius: 10px;
+    height: 600px;
+    overflow: scroll;
+    box-shadow: 10px 10px 5px #ccc;
+    -moz-box-shadow: 10px 10px 5px #ccc;
+    -webkit-box-shadow: 10px 10px 5px #ccc;
+    -khtml-box-shadow: 10px 10px 5px #ccc;
+    margin: 0 auto;
+}
+
+.preview-section-info {
+    padding-bottom: 24px;
+    overflow: auto;
+}
+
+.preview-section-callout {
+    display: inline-block;
+    float: left;
+    color: #666;
+    width: 33%;
+    margin-top: 12px;
+}
+
+.preview-device-section {
+    display: inline-block;
+    float: right;
+}
+
+.form-section {
+    margin-bottom: 64px;
+}
+
+.preview-device {
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-size: 100% 100%;
+    border: none;
+    color: transparent;
+    height: 40px;
+    width: 40px;
+    margin-left: 8px;
+    color: black;
+    cursor: pointer;
+}
+
+.mobile-preview {
+    width: 28px;
+}
+
+.form-mobile-notice {
+    width: 100vw;
+    height: calc(100vh - 66px);
+    background-color:rgba(255,255,255,.8);
+    display: none;
+}
+
+.form-mobile-container {
+    padding: 120px 24px;
+    line-height: 120%;
+    font-size: 16px;
+    text-align: center;
+}
+
+.form-mobile-container p {
+    margin-bottom: 24px;
+}
+
+.form-mobile-container a {
+    color:#D1770A;
+    text-decoration: underline;
+    font-weight: 600;
 }
 
 /* Restaurant Page Styling */
@@ -199,6 +368,7 @@ h1 {
     vertical-align: middle;
     text-align: center;
     background: url("https://www.datocms-assets.com/33465/1618597518-gigisgnocchi.jpg") center center no-repeat;
+    background-size: 100%;
     opacity: 0.75;
 }
 
@@ -225,7 +395,7 @@ h1 {
 }
 
 .menu-img-container {
-    width: 65vw;
+    width: 65%;
     margin: 0 auto;
 }
 
@@ -290,4 +460,98 @@ footer {
     margin-top: 80px;
     padding: 24px 40px;
     border-top: 1.5px solid #ccc;
+    bottom: 0;
+    position: absolute;
+    width: calc(100vw - 80px);
+}
+
+/* Media Queries */
+@media only screen and (max-width: 680px) {
+    .global-nav {
+        padding: 16px;
+        display: block;
+        width: calc(100vw - 47px)
+    }
+
+    .navBar a {
+        float: none;
+        margin: 16px 16px 0 0;
+    }
+
+    .hero-text {
+        font-size: 18px;
+    }
+
+    .mission-banner {
+        padding: 64px 40px;
+    }
+
+    .hp-banner {
+        height: 440px;
+    }
+
+    .hp-banner-text {
+        width: calc(100vw - 160px);
+    }
+
+    .hp-banner-intro {
+        font-size: 24px;
+    }
+
+    .hp-banner-cta {
+        font-size: 16px;
+    }
+
+    .sample-banner {
+        padding: 0;
+    }
+    
+    .login-container {
+        margin: 24px;
+        width: calc(100% - 48px);
+        max-width: none;
+    }
+
+    .login-header {
+        font-size: 18px;
+    }
+
+    .form-mobile-notice {
+        display: block;
+    }
+    
+    .form-aside-container, .preview-aside-container {
+        display: none;
+    }
+
+    .restaurant-links {
+        display: none;
+    }
+
+    .restaurant-header-img {
+        height: 240px;
+    }
+
+    .menu-img-container {
+        width: 100%;
+    }
+
+    .restaurant-section {
+        padding: 24px 16px 0 16px;
+    }
+
+    .restaurant-location, .restaurant-info {
+        width: 100%;
+        display: block;
+        text-align: center;
+    }
+
+    .restaurant-location iframe {
+        height: 240px;
+    }
+
+    footer {
+        position: relative;
+        width: calc(100vw - 80px);
+    }
 }

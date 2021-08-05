@@ -1,4 +1,5 @@
-import { useHistory } from "react-router-dom";
+import { useState } from "react";
+import { useHistory, Link } from "react-router-dom";
 import Header from "./Header";
 import RestaurantNav from "./RestaurantNav";
 import RestaurantHeader from "./RestaurantHeader";
@@ -7,6 +8,7 @@ import RestaurantHours from "./RestaurantHours";
 import RestaurantContact from "./RestaurantContact";
 
 function CreatePage ({ user, restaurantData, setRestaurantData }) {
+    const [previewWidth, setPreviewWidth] = useState("100%");
     let history = useHistory();
     
     function handleChange(e) {
@@ -35,147 +37,157 @@ function CreatePage ({ user, restaurantData, setRestaurantData }) {
         <>
         <Header />
         <div className="new-form">
+            <div className="form-mobile-notice">
+                <div className="form-mobile-container">
+                    <p>This page is best experienced on a desktop. Please switch to a desktop screen. Otherwise, you can preview your page here.</p>
+                    <Link to={`/restaurant/${user}`}>See Restaurant Site</Link>
+                </div>
+            </div>
             <div className="form-aside-container">
                 <form onSubmit = {handleSubmit}>
-                <h3>About</h3><hr></hr>
-                    <h4>Restaurant Name</h4>
-                    <input onChange = {handleChange} type="text" name="name" placeholder= "Acme Pizza co" value = {restaurantData.name} required/>
-                    <h4>Restaurant Description</h4>
-                    <input onChange = {handleChange} type="text" name="description" placeholder="Grungy bar with a lively atmosphere" value = {restaurantData.description} required/>
-                    <h4>Background Image</h4>
-                    <input onChange = {handleChange} type="text" name="backgroundImage" placeholder="Background Image URL" value = {restaurantData.backgroundImage} required/>
-                    <h4>Logo</h4>
-                    <input onChange = {handleChange} type="text" name="logoImage" placeholder="Logo Image URL" value = {restaurantData.logoImage} required/>
-                <h3>Menu</h3><hr></hr>
-                    <h4>Menu Image</h4>
-                    <input onChange = {handleChange} type="text" name="menuImage" placeholder="Menu Image URL" value = {restaurantData.menuImage} required/>
-                <h3>Hours & Location</h3><hr></hr>
-                    <h4>Google Maps Link</h4>
-                    <input onChange = {handleChange} type="text" name="mapLink" placeholder="Google Maps URL" value = {restaurantData.mapLink} required/>
-                    <br></br>
-                    <h4>Address</h4>
-                    <input onChange = {handleChange} type="text" name="address" placeholder="Address" value = {restaurantData.address} required/>
+                    <div className="form-section">
+                        <h3 className="hero-text">About</h3>
+                        <label>Restaurant Name</label>
+                        <input onChange = {handleChange} type="text" name="name" placeholder= "Acme Pizza co" value = {restaurantData.name} required/>
+                        <label>Restaurant Description</label>
+                        <input onChange = {handleChange} type="text" name="description" placeholder="Grungy bar with a lively atmosphere" value = {restaurantData.description} required/>
+                        <label>Background Image</label>
+                        <input onChange = {handleChange} type="text" name="backgroundImage" placeholder="Background Image URL" value = {restaurantData.backgroundImage} required/>
+                        <label>Logo</label>
+                        <input onChange = {handleChange} type="text" name="logoImage" placeholder="Logo Image URL" value = {restaurantData.logoImage} required/>
+                    </div>
+                    <div className="form-section">
+                    <h3 className="hero-text">Menu</h3>
+                        <label>Menu Image</label>
+                        <input onChange = {handleChange} type="text" name="menuImage" placeholder="Menu Image URL" value = {restaurantData.menuImage} required/>
+                    </div>
+                    <div className="form-section">
+                        <h3 className="hero-text">Hours & Location</h3>
+                        <label>Google Maps Link</label>
+                        <input onChange = {handleChange} type="text" name="mapLink" placeholder="Google Maps URL" value = {restaurantData.mapLink} required/>
+                        <label>Address</label>
+                        <input onChange = {handleChange} type="text" name="address" placeholder="Address" value = {restaurantData.address} required/>
 
-                    <br></br>
-                    <label>
-                        <span>Monday</span>
-                        <input
-                        type="checkbox"
-                        name = "monday-checkbox"
-                        onChange={handleChange}
-                        checked={false}
-                        />
-                        <input onChange = {handleChange} type="time" name="mondayOpen" value= {restaurantData.mondayOpen} />
-                        to
-                        <input onChange = {handleChange} type="time" name="mondayClose" value= {restaurantData.mondayClose}/>
-                    </label>
-                    <br></br>
-                    <label>
-                        <span>Tuesday</span>
-                        <input
-                        type="checkbox"
-                        name = "tuesda-checkbox"
-                        onChange={handleChange}
-                        checked={false}
-                        />
-                        <input onChange = {handleChange} type="time" name="tuesdayOpen" value= {restaurantData.tuesdayOpen} />
-                        to
-                        <input onChange = {handleChange} type="time" name="tuesdayClose" value= {restaurantData.tuesdayClose}/>
-                    </label>
-                    <br></br>
-                    <label>
-                        <span>Wednesday</span>
-                        <input
-                        type="checkbox"
-                        name = "wednesday-checkbox"
-                        onChange={handleChange}
-                        checked={false}
-                        />
-                        <input onChange = {handleChange} type="time" name="wednesdayOpen" value= {restaurantData.wednesdayOpen} />
-                        to
-                        <input onChange = {handleChange} type="time" name="wednesdayClose" value= {restaurantData.wednesdayClose}/>
-                    </label>
-                    <br></br>
-                    <label>
-                        <span>Thursday</span>
-                        <input
-                        type="checkbox"
-                        name = "thursday-checkbox"
-                        onChange={handleChange}
-                        checked={false}
-                        />
-                        <input onChange = {handleChange} type="time" name="thursdayOpen" value= {restaurantData.thursdayOpen} />
-                        to
-                        <input onChange = {handleChange} type="time" name="thursdayClose" value= {restaurantData.thursdayClose}/>
-                    </label>
-                    <br></br>
-                    <label>
-                        <span>Friday</span>
-                        <input
-                        type="checkbox"
-                        name = "friday-checkbox"
-                        onChange={handleChange}
-                        checked={false}
-                        />
-                        <input onChange = {handleChange} type="time" name="fridayOpen" value= {restaurantData.fridayOpen} />
-                        to
-                        <input onChange = {handleChange} type="time" name="fridayClose" value= {restaurantData.fridayClose}/>
-                    </label>
-                    <br></br>
-                    <label>
-                        <span>Saturday</span>
-                        <input
-                        type="checkbox"
-                        name = "saturday-checkbox"
-                        onChange={handleChange}
-                        checked={false}
-                        />
-                        <input onChange = {handleChange} type="time" name="saturdayOpen" value= {restaurantData.saturdayOpen} />
-                        to
-                        <input onChange = {handleChange} type="time" name="saturdayClose" value= {restaurantData.saturdayClose}/>
-                    </label>
-                    <br></br>
-                    <label>
-                        <span>Sunday</span>
-                        <input
-                        type="checkbox"
-                        name = "sunday-checkbox"
-                        onChange={handleChange}
-                        checked={false}
-                        />
-                        <input onChange = {handleChange} type="time" name="sundayOpen" value= {restaurantData.sundayOpen} />
-                        to
-                        <input onChange = {handleChange} type="time" name="sundayClose" value= {restaurantData.sundayClose}/>
-                    </label>
-                    <br></br>
-                    <h3>Contact</h3><hr></hr>
-                    <h4>Phone Number</h4>
-                    <input onChange = {handleChange} type="tel" name="number" placeholder='555-123-4567' value = {restaurantData.number} required/>
-                    <h4>Email Address</h4>
-                    <input onChange = {handleChange} type="email" name="email" placeholder='restaurant@gmail.com' value = {restaurantData.email} required/>
-                    <br></br>
-                    <br></br>
-                    <button  type="submit">Save & Launch Page</button>
+                        <label>
+                            <span>Monday</span>
+                            <input
+                            type="checkbox"
+                            name = "monday-checkbox"
+                            onChange={handleChange}
+                            checked={false}
+                            />
+                            <input onChange = {handleChange} type="time" name="mondayOpen" value= {restaurantData.mondayOpen} />
+                            to
+                            <input onChange = {handleChange} type="time" name="mondayClose" value= {restaurantData.mondayClose}/>
+                        </label>
+                        <label>
+                            <span>Tuesday</span>
+                            <input
+                            type="checkbox"
+                            name = "tuesda-checkbox"
+                            onChange={handleChange}
+                            checked={false}
+                            />
+                            <input onChange = {handleChange} type="time" name="tuesdayOpen" value= {restaurantData.tuesdayOpen} />
+                            to
+                            <input onChange = {handleChange} type="time" name="tuesdayClose" value= {restaurantData.tuesdayClose}/>
+                        </label>
+                        <label>
+                            <span>Wednesday</span>
+                            <input
+                            type="checkbox"
+                            name = "wednesday-checkbox"
+                            onChange={handleChange}
+                            checked={false}
+                            />
+                            <input onChange = {handleChange} type="time" name="wednesdayOpen" value= {restaurantData.wednesdayOpen} />
+                            to
+                            <input onChange = {handleChange} type="time" name="wednesdayClose" value= {restaurantData.wednesdayClose}/>
+                        </label>
+                        <label>
+                            <span>Thursday</span>
+                            <input
+                            type="checkbox"
+                            name = "thursday-checkbox"
+                            onChange={handleChange}
+                            checked={false}
+                            />
+                            <input onChange = {handleChange} type="time" name="thursdayOpen" value= {restaurantData.thursdayOpen} />
+                            to
+                            <input onChange = {handleChange} type="time" name="thursdayClose" value= {restaurantData.thursdayClose}/>
+                        </label>
+                        <label>
+                            <span>Friday</span>
+                            <input
+                            type="checkbox"
+                            name = "friday-checkbox"
+                            onChange={handleChange}
+                            checked={false}
+                            />
+                            <input onChange = {handleChange} type="time" name="fridayOpen" value= {restaurantData.fridayOpen} />
+                            to
+                            <input onChange = {handleChange} type="time" name="fridayClose" value= {restaurantData.fridayClose}/>
+                        </label>
+                        <label>
+                            <span>Saturday</span>
+                            <input
+                            type="checkbox"
+                            name = "saturday-checkbox"
+                            onChange={handleChange}
+                            checked={false}
+                            />
+                            <input onChange = {handleChange} type="time" name="saturdayOpen" value= {restaurantData.saturdayOpen} />
+                            to
+                            <input onChange = {handleChange} type="time" name="saturdayClose" value= {restaurantData.saturdayClose}/>
+                        </label>
+                        <label>
+                            <span>Sunday</span>
+                            <input
+                            type="checkbox"
+                            name = "sunday-checkbox"
+                            onChange={handleChange}
+                            checked={false}
+                            />
+                            <input onChange = {handleChange} type="time" name="sundayOpen" value= {restaurantData.sundayOpen} />
+                            to
+                            <input onChange = {handleChange} type="time" name="sundayClose" value= {restaurantData.sundayClose}/>
+                        </label>
+                    </div>
+                    <div className="form-section">
+                        <h3 className="hero-text">Contact</h3>
+                        <label>Phone Number</label>
+                        <input onChange = {handleChange} type="tel" name="number" placeholder='555-123-4567' value = {restaurantData.number} required/>
+                        <label>Email Address</label>
+                        <input onChange = {handleChange} type="email" name="email" placeholder='restaurant@gmail.com' value = {restaurantData.email} required/>
+                    </div>
+                    <button className="styled-button" type="submit">Save & Launch Page</button>
                 </form>
             </div>
             <div className="preview-aside-container">
-            <div>
-            <RestaurantNav 
-                restaurantData={restaurantData}
-            />
-            <RestaurantHeader 
-                restaurantData={restaurantData}
-            />
-            <RestaurantMenu 
-                restaurantData={restaurantData}
-            />
-            <RestaurantHours 
-                restaurantData={restaurantData}
-            />
-            <RestaurantContact 
-                restaurantData={restaurantData}
-            />
-            </div>
+                <div className="preview-section-info">
+                    <p className="preview-section-callout">This is a preview</p>
+                    <div className="preview-device-section">
+                        <button className={ previewWidth === "100%" ? "preview-device active desktop-preview" : "preview-device desktop-preview"} onClick={()=>setPreviewWidth("100%")}><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="desktop" class="svg-inline--fa fa-desktop fa-w-18" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M528 0H48C21.5 0 0 21.5 0 48v320c0 26.5 21.5 48 48 48h192l-16 48h-72c-13.3 0-24 10.7-24 24s10.7 24 24 24h272c13.3 0 24-10.7 24-24s-10.7-24-24-24h-72l-16-48h192c26.5 0 48-21.5 48-48V48c0-26.5-21.5-48-48-48zm-16 352H64V64h448v288z"></path></svg></button>
+                        <button className={ previewWidth === "320px" ? "preview-device active mobile-preview" : "preview-device mobile-preview"} onClick={()=>setPreviewWidth("320px")}><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="mobile-alt" class="svg-inline--fa fa-mobile-alt fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M272 0H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h224c26.5 0 48-21.5 48-48V48c0-26.5-21.5-48-48-48zM160 480c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm112-108c0 6.6-5.4 12-12 12H60c-6.6 0-12-5.4-12-12V60c0-6.6 5.4-12 12-12h200c6.6 0 12 5.4 12 12v312z"></path></svg></button>
+                    </div>
+                </div>
+                <div className="preview-browser-container" style={{ width: previewWidth }}>
+                    <RestaurantNav 
+                        restaurantData={restaurantData}
+                    />
+                    <RestaurantHeader 
+                        restaurantData={restaurantData}
+                    />
+                    <RestaurantMenu 
+                        restaurantData={restaurantData}
+                    />
+                    <RestaurantHours 
+                        restaurantData={restaurantData}
+                    />
+                    <RestaurantContact 
+                        restaurantData={restaurantData}
+                    />
+                </div>
             </div>
          </div>
         </>

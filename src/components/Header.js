@@ -5,8 +5,8 @@ function Header () {
     <nav className="global-nav">
         <NavLink exact to="/"><h1>Restaurant Pal</h1></NavLink>
         <div className="navBar">
-          <NavLink exact to="/login">Login</NavLink>
-          <NavLink exact to="/create-account">Create Account</NavLink>
+          <NavLink activeClassName="active" exact to="/login">Login</NavLink>
+          <NavLink activeClassName="active" exact to="/create-account">Create Account</NavLink>
         </div>
     </nav>
   )

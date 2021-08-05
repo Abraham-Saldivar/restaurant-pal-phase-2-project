@@ -80,23 +80,28 @@ function CreateAccount({ setUser, setRestaurantData }) {
     }
 
     
-        return (
+    return (
         <div>
             <Header />
-              <form onSubmit={handleSubmit} className="new-account">
-                <h2> Time to create your account!</h2>
-                    <label> 
-                        <input placeholder="Username" value={username} type="text" onChange={(e) => setUsername(e.target.value)}/>
-                    </label>
-                    <label>
-                    <input placeholder="Password" value={password} type="password" onChange={(e) => setPassword(e.target.value)} required/>
-                    </label>
-                    <input type="submit" value="Create your new account!" />
-            </form>
-            <button onClick={handleExistingAccount}>Already have a account? Sign in. </button>
+            <div className="login-container">
+                <form onSubmit={handleSubmit} className="new-account">
+                    <h2 className="login-header"> Time to create your account!</h2>
+                        
+                    <div className="login-form-container">
+                        <label className="login-form-label"> Username</label>
+                            <input placeholder="Username" value={username} type="text" className="login-form-input" onChange={(e) => setUsername(e.target.value)}/>
+                        <label className="login-form-label"> Password</label>
+                            <input placeholder="Password" value={password} type="password" className="login-form-input" onChange={(e) => setPassword(e.target.value)} required/>
+                        <input type="submit" value="Create" className="styled-button" />
+                        <button className="login-sign-button" onClick={handleExistingAccount}>Already have a account? Sign in. </button>
+                    </div>    
+                </form>
+                
+            </div>
+                
         </div>
- 
- )
+    
+    )
 }
 
 export default CreateAccount

@@ -35,19 +35,23 @@ function logIn(userObj) {
 
 
 return (
-        <div>
+    <div >
         <Header />
-        <form onSubmit={handleSubmit} className="login">
-          <h2> Let's get you signed in.</h2>
-              <label> 
-                  <input placeholder="Username" value={username} type="text" onChange={(e) => setUsername(e.target.value)} required/>
-              </label>
-              <label>
-              <input placeholder="Password" value={password} type="password" onChange={(e) => setPassword(e.target.value)} required/>
-              </label>
-              <input type="submit" value="Login" />
-              <button onClick={handleNewAccount}>Don't have a account? Sign up here.</button>
-      </form>
+
+        <div className="login-container">
+            <form onSubmit={handleSubmit} className="login">
+                <h2 className="login-header"> Let's get you signed in.</h2>
+                
+                <div className="login-form-container">
+                    <label className="login-form-label">Username</label>
+                        <input placeholder="Username" className="login-form-input" value={username} type="text" onChange={(e) => setUsername(e.target.value)} required/>
+                    <label className="login-form-label">Password</label>
+                        <input placeholder="Password" className="login-form-input" value={password} type="password" onChange={(e) => setPassword(e.target.value)} required/>
+                    <input className="styled-button" type="submit" value="Login" />
+                    <button className="login-sign-button" onClick={handleNewAccount}>Don't have a account? Sign up here.</button>
+                </div>
+             </form>
+        </div>
   </div>
     )
 }

@@ -380,19 +380,19 @@ h1 {
 
 /* Restaurant Page Styling */
 .restaurant-nav {
-    padding: 16px 40px;
+    padding: 24px 40px;
+    text-align: center;
+    background: white;
+    position: sticky;
+    top: 0;
+}
+
+.restaurant-header-container {
     overflow: auto;
 }
 
-.restaurant-logo {
-    height: 40px;
-    width: auto;
-    float: left;
-}
-
 .restaurant-links {
-    padding-top: 16px;
-    float: right;
+    float: initial;
 }
 
 .restaurant-links a {
@@ -402,41 +402,62 @@ h1 {
 }
 
 .restaurant-header-img {
-    width: 100%;
-    height: 400px;
-    overflow: hidden;
+    width: 65%;
+    height: 550px;
     vertical-align: middle;
     text-align: center;
     background: url("https://www.datocms-assets.com/33465/1618597518-gigisgnocchi.jpg") center center no-repeat;
-    background-size: 100%;
-    opacity: 0.75;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    display: inline-block;
+    float: left;
+}
+
+.restaurant-header-intro {
+    display: inline-block;
+    float: left;
+    width: calc(35% - 80px);
+    padding: 80px 40px 40px;
+}
+
+.restaurant-header-logo {
+    height: 56px;
+    width: auto;
 }
 
 .restaurant-name {
     font-family: 'Libre Baskerville', serif;
-    font-size: 24px;
-    margin-bottom: 40px;
-    position: relative;
-    top: 40%;
-    text-align: center;
+    font-size: 32px;
+    margin-bottom: 24px;
+    font-style: italic;
+}
+
+.restaurant-title-header {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 80px;
+    color: #ccc;
+    font-weight: 100;
+    font-style: italic;
+    margin-top: 0;
+    letter-spacing: -3px
 }
 
 .restaurant-description {
-    width: 50vw;
-    text-align: center;
-    margin: 0 auto;
-    line-height: 120%;
-    position: relative;
-    top: 40%;
+    line-height: 140%;
 }
 
 .restaurant-section {
-    padding: 80px 80px 0 80px;
+    padding: 80px 40px 0 40px;
+    overflow: auto;
+
 }
 
 .menu-img-container {
     width: 65%;
-    margin: 0 auto;
+    float: right;
+    margin-top: -120px;
 }
 
 .menu-img {
@@ -448,7 +469,7 @@ h1 {
 }
 
 .restaurant-location {
-    width: calc(50vw - 120px);
+    width: 50vw;
     display: block;
     float: left;
     margin-right: 80px;
@@ -460,7 +481,7 @@ h1 {
 }
 
 .restaurant-info {
-    width: calc(50vw - 120px);
+    width: calc(50vw - 240px);
     display: block;
     float: left;
 }
@@ -488,10 +509,11 @@ h1 {
 #contact a {
     margin-bottom: 24px;
     display: block;
-    text-align: center;
     text-decoration: none;
     cursor: pointer;
     color: black;
+    width: 60%;
+    margin-left: 40%;
 }
 
 #contact {
@@ -594,12 +616,45 @@ footer p {
         display: none;
     }
 
+    .restaurant-header-intro {
+        float: none;
+        display: block;
+        width: calc(100% - 48px);
+        padding: 24px;
+    }
+
+    .restaurant-header-logo {
+        width: 100%;
+        height: 40px;
+    }
+
+    .restaurant-name {
+        text-align: center;
+        font-size: 24px;
+        letter-spacing: 1px;
+    }
+
+    .restaurant-description {
+        text-align: center;
+    }
+
+    .restaurant-title-header {
+        font-size: 40px;
+        text-align: center;
+    }
+
+    .menu-img-container {
+        margin-top: 0;
+    }
+
     .restaurant-links {
-        display: none;
+        text-align: center;
     }
 
     .restaurant-header-img {
         height: 240px;
+        width: 100%;
+        float: none;
     }
 
     .menu-img-container {
@@ -618,6 +673,16 @@ footer p {
 
     .restaurant-location iframe {
         height: 240px;
+    }
+
+    .address-info {
+        margin-top: 24px
+    }
+
+    #contact a {
+        width: 100%;
+        margin-left: 0;
+        text-align: center;
     }
 
     footer {

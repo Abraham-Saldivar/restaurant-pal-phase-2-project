@@ -20,7 +20,7 @@ function RestaurantHours ({ restaurantData }) {
     
     return (
         <div id="hours-location" className="restaurant-section">
-            <h2 className="restaurant-name">Hours & Location</h2>
+            <h2 className="restaurant-title-header">Hours & Location</h2>
             <div className="restaurant-location">
                 <iframe src={mapLink} width="600" height="450" allowFullScreen="" loading="lazy" />
             </div>

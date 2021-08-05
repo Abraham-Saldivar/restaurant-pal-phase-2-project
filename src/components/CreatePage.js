@@ -63,7 +63,6 @@ function CreatePage ({ user, restaurantData, setRestaurantData }) {
             }
         )
         }
-        
     }
 
     return (
@@ -191,9 +190,7 @@ function CreatePage ({ user, restaurantData, setRestaurantData }) {
                     </div>
                 </div>
                 <div className="preview-browser-container" style={{ width: previewWidth }}>
-                    <RestaurantNav 
-                        restaurantData={restaurantData}
-                    />
+                    <RestaurantNav />
                     <RestaurantHeader 
                         restaurantData={restaurantData}
                     />
@@ -209,7 +206,7 @@ function CreatePage ({ user, restaurantData, setRestaurantData }) {
                 </div>
             </div>
          </div>
-                     </>
+        </>
             }
        </> 
     )

@@ -3,7 +3,7 @@ function RestaurantContact ({ restaurantData }) {
     
     return (
         <div id="contact" className="restaurant-section">
-            <h2 className="restaurant-name">Contact</h2>
+            <h2 className="restaurant-title-header">Contact</h2>
             <a href={`tel:${number}`}>{number}</a>
             <a href={`mailto:${email}`}>{email}</a>
         </div>

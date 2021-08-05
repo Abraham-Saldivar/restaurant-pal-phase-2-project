@@ -31,9 +31,7 @@ function editButton() {
                 : 
                     <div>
                     {user !== 1 && user.toString() === id.toString()? <button onClick = {editButton} className = "styled-button">Edit Details</button> : null}
-                    <RestaurantNav 
-                        restaurantData={restaurantData}
-                    />
+                    <RestaurantNav />
                     <RestaurantHeader 
                         restaurantData={restaurantData}
                     />

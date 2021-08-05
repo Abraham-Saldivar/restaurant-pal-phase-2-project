@@ -30,7 +30,7 @@ function editButton() {
                     <img className = "loading-gif" src = "/data/loading-logo.gif"/>
                 : 
                     <div>
-                    {user !== 1 && user.toString() === id.toString()? <button onClick = {editButton} className = "styled-button">Edit Details</button> : null}
+                    {user !== 1 && user.toString() === id.toString()? <button onClick = {editButton} className = "restaurant-edit">Edit your restaurant page</button> : null}
                     <RestaurantNav />
                     <RestaurantHeader 
                         restaurantData={restaurantData}

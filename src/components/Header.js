@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 
-function Header () {
+function Header ({user,setUser}) {
   return (
     <nav className="global-nav">
         <div>
@@ -13,11 +13,30 @@ function Header () {
         </div>
         
         <div className="navBar">
-          <NavLink activeClassName="active" exact to="/login">Login</NavLink>
-          <NavLink activeClassName="active" exact to="/create-account">Create Account</NavLink>
+        {!user ?  <> <NavLink activeClassName="active" exact to="/login">Login</NavLink> <NavLink activeClassName="active" exact to="/create-account"> Create Account</NavLink> </> :  <NavLink onClick={() => setUser(null)} exact to="/">Logout</NavLink>}
         </div>
     </nav>
   )
 }
 
 export default Header
+
+
+/* import { NavLink } from "react-router-dom";
+
+
+function Header ({user, setUser}) {
+  console.log("header rendered")
+  
+  return (
+    <nav className="global-nav">
+        <NavLink exact to="/"><h1>Restaurant Pal</h1></NavLink>
+        <div className="navBar">
+          {!user ?  <> <NavLink activeClassName="active" exact to="/login">Login</NavLink> <NavLink activeClassName="active" exact to="/create-account"> Create Account</NavLink> </> :  <NavLink onClick={() => setUser(null)} exact to="/">Logout</NavLink>}
+        </div>
+    </nav>
+  )
+  console.log(user)
+}
+
+export default Header */

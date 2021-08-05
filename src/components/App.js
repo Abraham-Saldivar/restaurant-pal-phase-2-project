@@ -9,7 +9,7 @@ import Footer from "./Footer";
 
 function App() {
 
-  const [user, setUser] = useState(1);
+  const [user, setUser] = useState(null);
   //^^^set user to id of a sample user to start
   const [restaurantData, setRestaurantData] = useState([]);
 
@@ -18,18 +18,21 @@ function App() {
       <Switch>
         <Route path="/login">
           <Login 
+          user={user}
             setUser={setUser}
             setRestaurantData={setRestaurantData}
           />
         </Route>
         <Route path="/create-account">
           <CreateAccount 
+          user={user}
           setUser={setUser}
           setRestaurantData={setRestaurantData}/>
         </Route>
         <Route path="/create-page">
           <CreatePage 
             user = {user}
+            setUser={setUser}
             restaurantData={restaurantData}
             setRestaurantData={setRestaurantData}
           />

@@ -7,7 +7,7 @@ const userObj = allData.find(userObj => userObj.username === username && userObj
 { userObj  ?  logIn(userObj) : alert("Invalid Login")}
 }
  */
-function CreateAccount({ setUser, setRestaurantData }) {
+function CreateAccount({ user, setUser, setRestaurantData }) {
      const [username, setUsername] = useState("")
      const [password, setPassword] = useState("")
      const [allData, setAllData]  = useState([])
@@ -82,7 +82,7 @@ function CreateAccount({ setUser, setRestaurantData }) {
     
     return (
         <div>
-            <Header />
+            <Header user={user} setUser={setUser}/>
             <div className="login-container">
                 <form onSubmit={handleSubmit} className="new-account">
                     <h2 className="login-header"> Time to create your account!</h2>

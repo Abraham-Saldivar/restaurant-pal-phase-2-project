@@ -7,7 +7,7 @@ import RestaurantMenu from "./RestaurantMenu";
 import RestaurantHours from "./RestaurantHours";
 import RestaurantContact from "./RestaurantContact";
 
-function CreatePage ({ user, restaurantData, setRestaurantData }) {
+function CreatePage ({ user, setUser, restaurantData, setRestaurantData }) {
     const [previewWidth, setPreviewWidth] = useState("100%");
     const [isLoading, setIsLoading] = useState(true)
 
@@ -71,7 +71,7 @@ function CreatePage ({ user, restaurantData, setRestaurantData }) {
             <img className = "loading-gif" src = "/data/loading-logo.gif"/>
             :
                     <>
-                        <Header />
+                        <Header setUser={setUser} user={user}/>
         <div className="new-form">
             <div className="form-mobile-notice">
                 <div className="form-mobile-container">

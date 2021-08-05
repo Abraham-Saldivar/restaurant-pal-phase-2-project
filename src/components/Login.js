@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react"
 import { useHistory } from "react-router-dom";
 
 
-function Login ({setUser, setRestaurantData}) {
+function Login ({setUser, user, setRestaurantData}) {
 
 const [username, setUsername] = useState("")
 const [password, setPassword] = useState("")
@@ -36,7 +36,7 @@ function logIn(userObj) {
 
 return (
     <div >
-        <Header />
+        <Header setUser={setUser} user={user}/>
 
         <div className="login-container">
             <form onSubmit={handleSubmit} className="login">

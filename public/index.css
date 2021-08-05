@@ -10,6 +10,14 @@ ul {
     padding-left: 0;
 }
 
+.loading-gif {
+    display: block;
+    margin: 0 auto;  
+    width: 5%;
+    padding: 20% 20%;
+
+}
+
 .styled-button {
     background: #D1770A;
     border: none;

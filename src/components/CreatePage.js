@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useHistory, Link } from "react-router-dom";
 import Header from "./Header";
 import RestaurantNav from "./RestaurantNav";
@@ -9,8 +9,16 @@ import RestaurantContact from "./RestaurantContact";
 
 function CreatePage ({ user, restaurantData, setRestaurantData }) {
     const [previewWidth, setPreviewWidth] = useState("100%");
+    const [isLoading, setIsLoading] = useState(true)
+
     let history = useHistory();
     
+
+    useEffect(() => {
+        setTimeout(() => setIsLoading(false), 700)
+    },[])
+
+
     function handleChange(e) {
         setRestaurantData(
             {...restaurantData,
@@ -60,7 +68,11 @@ function CreatePage ({ user, restaurantData, setRestaurantData }) {
 
     return (
         <>
-        <Header />
+            {isLoading? 
+            <img className = "loading-gif" src = "/data/loading-logo.gif"/>
+            :
+                    <>
+                        <Header />
         <div className="new-form">
             <div className="form-mobile-notice">
                 <div className="form-mobile-container">
@@ -197,7 +209,9 @@ function CreatePage ({ user, restaurantData, setRestaurantData }) {
                 </div>
             </div>
          </div>
-        </>
+                     </>
+            }
+       </> 
     )
 }
 

@@ -33,6 +33,31 @@ function CreatePage ({ user, restaurantData, setRestaurantData }) {
         history.push(`/restaurant/${user}`);
 
     }
+
+    function handleCheck(e) {
+        const dayOpen = `${e.target.name}Open`;
+        const dayClose = `${e.target.name}Close`;
+        console.log(restaurantData.dayOpen)
+        console.log(e.target.checked)
+
+        {e.target.checked? 
+        setRestaurantData(
+            {...restaurantData,
+                [dayOpen]: '09:00',            
+                [dayClose]: '17:00'            
+            }
+        )
+         :
+         setRestaurantData(
+            {...restaurantData,
+            [dayOpen]: "",
+            [dayClose]: "",
+            }
+        )
+        }
+        
+    }
+
     return (
         <>
         <Header />
@@ -72,9 +97,9 @@ function CreatePage ({ user, restaurantData, setRestaurantData }) {
                             <span>Monday</span>
                             <input
                             type="checkbox"
-                            name = "monday-checkbox"
-                            onChange={handleChange}
-                            checked={false}
+                            name = "monday"
+                            onChange={handleCheck}
+                            checked={!!restaurantData.mondayOpen}
                             />
                             <input onChange = {handleChange} type="time" name="mondayOpen" value= {restaurantData.mondayOpen} />
                             to
@@ -84,9 +109,9 @@ function CreatePage ({ user, restaurantData, setRestaurantData }) {
                             <span>Tuesday</span>
                             <input
                             type="checkbox"
-                            name = "tuesda-checkbox"
-                            onChange={handleChange}
-                            checked={false}
+                            name = "tuesday"
+                            onChange={handleCheck}
+                            checked={!!restaurantData.tuesdayOpen}
                             />
                             <input onChange = {handleChange} type="time" name="tuesdayOpen" value= {restaurantData.tuesdayOpen} />
                             to
@@ -96,9 +121,9 @@ function CreatePage ({ user, restaurantData, setRestaurantData }) {
                             <span>Wednesday</span>
                             <input
                             type="checkbox"
-                            name = "wednesday-checkbox"
-                            onChange={handleChange}
-                            checked={false}
+                            name = "wednesday"
+                            onChange={handleCheck}
+                            checked={!!restaurantData.wednesdayOpen}
                             />
                             <input onChange = {handleChange} type="time" name="wednesdayOpen" value= {restaurantData.wednesdayOpen} />
                             to
@@ -108,9 +133,9 @@ function CreatePage ({ user, restaurantData, setRestaurantData }) {
                             <span>Thursday</span>
                             <input
                             type="checkbox"
-                            name = "thursday-checkbox"
-                            onChange={handleChange}
-                            checked={false}
+                            name = "thursday"
+                            onChange={handleCheck}
+                            checked={!!restaurantData.thursdayOpen}
                             />
                             <input onChange = {handleChange} type="time" name="thursdayOpen" value= {restaurantData.thursdayOpen} />
                             to
@@ -120,9 +145,9 @@ function CreatePage ({ user, restaurantData, setRestaurantData }) {
                             <span>Friday</span>
                             <input
                             type="checkbox"
-                            name = "friday-checkbox"
-                            onChange={handleChange}
-                            checked={false}
+                            name = "friday"
+                            onChange={handleCheck}
+                            checked={!!restaurantData.fridayOpen}
                             />
                             <input onChange = {handleChange} type="time" name="fridayOpen" value= {restaurantData.fridayOpen} />
                             to
@@ -132,9 +157,9 @@ function CreatePage ({ user, restaurantData, setRestaurantData }) {
                             <span>Saturday</span>
                             <input
                             type="checkbox"
-                            name = "saturday-checkbox"
-                            onChange={handleChange}
-                            checked={false}
+                            name = "saturday"
+                            onChange={handleCheck}
+                            checked={!!restaurantData.saturdayOpen}
                             />
                             <input onChange = {handleChange} type="time" name="saturdayOpen" value= {restaurantData.saturdayOpen} />
                             to
@@ -144,9 +169,9 @@ function CreatePage ({ user, restaurantData, setRestaurantData }) {
                             <span>Sunday</span>
                             <input
                             type="checkbox"
-                            name = "sunday-checkbox"
-                            onChange={handleChange}
-                            checked={false}
+                            name = "sunday"
+                            onChange={handleCheck}
+                            checked={!!restaurantData.sundayOpen}
                             />
                             <input onChange = {handleChange} type="time" name="sundayOpen" value= {restaurantData.sundayOpen} />
                             to
@@ -193,4 +218,5 @@ function CreatePage ({ user, restaurantData, setRestaurantData }) {
         </>
     )
 }
-export default CreatePage
+
+export default CreatePage;

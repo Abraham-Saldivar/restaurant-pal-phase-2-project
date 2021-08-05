@@ -38,6 +38,7 @@ function App() {
           <Restaurant 
             restaurantData={restaurantData}
             setRestaurantData={setRestaurantData}
+            user = {user}
           /> 
         </Route>
         <Route exact path="/">

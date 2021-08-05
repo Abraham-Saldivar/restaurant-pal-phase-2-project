@@ -1,12 +1,13 @@
 import { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import RestaurantNav from "./RestaurantNav";
 import RestaurantHeader from "./RestaurantHeader";
 import RestaurantMenu from "./RestaurantMenu";
 import RestaurantHours from "./RestaurantHours";
 import RestaurantContact from "./RestaurantContact";
 
-function Restaurant ({ restaurantData, setRestaurantData }) {
+function Restaurant ({ restaurantData, setRestaurantData, user }) {
+    let history = useHistory();
     const { id } = useParams();
 
     useEffect(() => {
@@ -15,8 +16,17 @@ function Restaurant ({ restaurantData, setRestaurantData }) {
         .then(e=>setRestaurantData(e.data))
     },[])
 
+console.log('id: ' + id)
+console.log('user: ' + user)
+
+function editButton() {
+    console.log('edit button');
+    history.push("/create-page");
+}
+
     return (
         <div>
+            {user !== 1 && user.toString() === id.toString()? <button onClick = {editButton} className = "styled-button">Edit Details</button> : null}
             <RestaurantNav 
                 restaurantData={restaurantData}
             />

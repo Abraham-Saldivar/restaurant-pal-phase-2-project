@@ -92,91 +92,73 @@ function CreatePage ({ user, restaurantData, setRestaurantData }) {
                         <input onChange = {handleChange} type="text" name="mapLink" placeholder="Google Maps URL" value = {restaurantData.mapLink} required/>
                         <label>Address</label>
                         <input onChange = {handleChange} type="text" name="address" placeholder="Address" value = {restaurantData.address} required/>
+                        <div className="hours-container">
+                            <label>Hours</label>
 
-                        <label>
-                            <span>Monday</span>
-                            <input
-                            type="checkbox"
-                            name = "monday"
-                            onChange={handleCheck}
-                            checked={!!restaurantData.mondayOpen}
-                            />
-                            <input onChange = {handleChange} type="time" name="mondayOpen" value= {restaurantData.mondayOpen} />
-                            to
-                            <input onChange = {handleChange} type="time" name="mondayClose" value= {restaurantData.mondayClose}/>
-                        </label>
-                        <label>
-                            <span>Tuesday</span>
-                            <input
-                            type="checkbox"
-                            name = "tuesday"
-                            onChange={handleCheck}
-                            checked={!!restaurantData.tuesdayOpen}
-                            />
-                            <input onChange = {handleChange} type="time" name="tuesdayOpen" value= {restaurantData.tuesdayOpen} />
-                            to
-                            <input onChange = {handleChange} type="time" name="tuesdayClose" value= {restaurantData.tuesdayClose}/>
-                        </label>
-                        <label>
-                            <span>Wednesday</span>
-                            <input
-                            type="checkbox"
-                            name = "wednesday"
-                            onChange={handleCheck}
-                            checked={!!restaurantData.wednesdayOpen}
-                            />
-                            <input onChange = {handleChange} type="time" name="wednesdayOpen" value= {restaurantData.wednesdayOpen} />
-                            to
-                            <input onChange = {handleChange} type="time" name="wednesdayClose" value= {restaurantData.wednesdayClose}/>
-                        </label>
-                        <label>
-                            <span>Thursday</span>
-                            <input
-                            type="checkbox"
-                            name = "thursday"
-                            onChange={handleCheck}
-                            checked={!!restaurantData.thursdayOpen}
-                            />
-                            <input onChange = {handleChange} type="time" name="thursdayOpen" value= {restaurantData.thursdayOpen} />
-                            to
-                            <input onChange = {handleChange} type="time" name="thursdayClose" value= {restaurantData.thursdayClose}/>
-                        </label>
-                        <label>
-                            <span>Friday</span>
-                            <input
-                            type="checkbox"
-                            name = "friday"
-                            onChange={handleCheck}
-                            checked={!!restaurantData.fridayOpen}
-                            />
-                            <input onChange = {handleChange} type="time" name="fridayOpen" value= {restaurantData.fridayOpen} />
-                            to
-                            <input onChange = {handleChange} type="time" name="fridayClose" value= {restaurantData.fridayClose}/>
-                        </label>
-                        <label>
-                            <span>Saturday</span>
-                            <input
-                            type="checkbox"
-                            name = "saturday"
-                            onChange={handleCheck}
-                            checked={!!restaurantData.saturdayOpen}
-                            />
-                            <input onChange = {handleChange} type="time" name="saturdayOpen" value= {restaurantData.saturdayOpen} />
-                            to
-                            <input onChange = {handleChange} type="time" name="saturdayClose" value= {restaurantData.saturdayClose}/>
-                        </label>
-                        <label>
-                            <span>Sunday</span>
-                            <input
-                            type="checkbox"
-                            name = "sunday"
-                            onChange={handleCheck}
-                            checked={!!restaurantData.sundayOpen}
-                            />
-                            <input onChange = {handleChange} type="time" name="sundayOpen" value= {restaurantData.sundayOpen} />
-                            to
-                            <input onChange = {handleChange} type="time" name="sundayClose" value= {restaurantData.sundayClose}/>
-                        </label>
+                            <label className="hour-item">
+                                <input type="checkbox" name = "monday" onChange={handleCheck} checked={!!restaurantData.mondayOpen}/>
+                                <span>Monday</span>
+                                <div className="hours-input-container">
+                                    <input onChange = {handleChange} className="hour-input" type="time" name="mondayOpen" value= {restaurantData.mondayOpen} />
+                                    <span>to</span>
+                                    <input onChange = {handleChange} className="hour-input" type="time" name="mondayClose" value= {restaurantData.mondayClose}/>
+                                </div>  
+                            </label>
+                            <label className="hour-item">
+                                <input type="checkbox" name = "monday" onChange={handleCheck} checked={!!restaurantData.tuesdayOpen}/>
+                                <span>Tuesday</span>
+                                <div className="hours-input-container">
+                                    <input onChange = {handleChange} className="hour-input" type="time" name="mondayOpen" value= {restaurantData.tuesdayOpen} />
+                                    <span>to</span>
+                                    <input onChange = {handleChange} className="hour-input" type="time" name="mondayClose" value= {restaurantData.tuesdayClose}/>
+                                </div>  
+                            </label>
+                            <label className="hour-item">
+                                <input type="checkbox" name = "monday" onChange={handleCheck} checked={!!restaurantData.wednesdayOpen}/>
+                                <span>Wednesday</span>
+                                <div className="hours-input-container">
+                                    <input onChange = {handleChange} className="hour-input" type="time" name="mondayOpen" value= {restaurantData.wednesdayOpen} />
+                                    <span>to</span>
+                                    <input onChange = {handleChange} className="hour-input" type="time" name="mondayClose" value= {restaurantData.wednesdayClose}/>
+                                </div>  
+                            </label>
+                            <label className="hour-item">
+                                <input type="checkbox" name = "monday" onChange={handleCheck} checked={!!restaurantData.thursdayOpen}/>
+                                <span>Thursday</span>
+                                <div className="hours-input-container">
+                                    <input onChange = {handleChange} className="hour-input" type="time" name="mondayOpen" value= {restaurantData.thursdayOpen} />
+                                    <span>to</span>
+                                    <input onChange = {handleChange} className="hour-input" type="time" name="mondayClose" value= {restaurantData.thursdayClose}/>
+                                </div>  
+                            </label>
+                            <label className="hour-item">
+                                <input type="checkbox" name = "monday" onChange={handleCheck} checked={!!restaurantData.fridayOpen}/>
+                                <span>Friday</span>
+                                <div className="hours-input-container">
+                                    <input onChange = {handleChange} className="hour-input" type="time" name="mondayOpen" value= {restaurantData.fridayOpen} />
+                                    <span>to</span>
+                                    <input onChange = {handleChange} className="hour-input" type="time" name="mondayClose" value= {restaurantData.fridayClose}/>
+                                </div>  
+                            </label>
+                            <label className="hour-item">
+                                <input type="checkbox" name = "monday" onChange={handleCheck} checked={!!restaurantData.saturdayOpen}/>
+                                <span>Saturday</span>
+                                <div className="hours-input-container">
+                                    <input onChange = {handleChange} className="hour-input" type="time" name="mondayOpen" value= {restaurantData.saturdayOpen} />
+                                    <span>to</span>
+                                    <input onChange = {handleChange} className="hour-input" type="time" name="mondayClose" value= {restaurantData.saturdayClose}/>
+                                </div>  
+                            </label>
+                            <label className="hour-item">
+                                <input type="checkbox" name = "monday" onChange={handleCheck} checked={!!restaurantData.sundayOpen}/>
+                                <span>Sunday</span>
+                                <div className="hours-input-container">
+                                    <input onChange = {handleChange} className="hour-input" type="time" name="mondayOpen" value= {restaurantData.sundayOpen} />
+                                    <span>to</span>
+                                    <input onChange = {handleChange} className="hour-input" type="time" name="mondayClose" value= {restaurantData.sundayClose}/>
+                                </div>  
+                            </label>
+                        </div>
                     </div>
                     <div className="form-section">
                         <h3 className="hero-text">Contact</h3>

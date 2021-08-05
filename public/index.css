@@ -379,6 +379,16 @@ h1 {
 }
 
 /* Restaurant Page Styling */
+.restaurant-edit {
+    background-color: #D1770A;
+    padding: 16px;
+    width: 100%;
+    color: white;
+    font-family: Helvetica;
+    border: none;
+    font-size: 14px;
+}
+
 .restaurant-nav {
     padding: 24px 40px;
     text-align: center;

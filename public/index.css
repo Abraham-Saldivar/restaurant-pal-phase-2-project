@@ -220,10 +220,13 @@ h1 {
     margin-bottom: 8px;
 }
 
-
 .sample-container a {
     color: black;
     text-decoration: none;
+}
+
+.sample-container img {
+    width: 100%;
 }
 
 /* Create Page Styling */
@@ -616,6 +619,10 @@ footer p {
 
     .sample-banner {
         padding: 0;
+    }
+
+    .sample-container {
+        width: 90%;
     }
     
     .login-container {

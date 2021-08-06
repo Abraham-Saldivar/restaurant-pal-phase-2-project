@@ -1,5 +1,4 @@
 # Welcome to Restaurant Pal
-
 Create a simple restaurant site in minutes.
 
 We're here to help restauranteurs create a no-fuss landing page for their business. During a time when it's crucial to have a website, we're here to make it easy for the non-tech saavy.
@@ -7,6 +6,19 @@ We're here to help restauranteurs create a no-fuss landing page for their busine
 <img src="https://p69.f3.n0.cdn.getcloudapp.com/items/BluxyAqD/761e2151-b4d7-4240-92b6-70cb135ac124.jpg?source=viewer&v=75c01e54c648d63adb269622aa09b3a6" />
 
 This project was bootstrapped with <a href="https://github.com/facebook/create-react-app">Create React App</a>.
+
+## Contributors
+### Abraham Saldivar
+Github: <a href="https://github.com/???">???</a>
+Email: <a href="mailto:???@gmail.com">???</a>
+
+### John Kim
+Github: <a href="https://github.com/jyk595">jyk595</a>
+Email: <a href="mailto:jyk595@gmail.com">jyk595@gmail.com</a>
+
+### Whiting Tennis
+Github: <a href="https://github.com/???">???</a>
+Email: <a href="mailto:???@gmail.com">???</a>
 
 ## Available Scripts
 In the project directory, you can run:

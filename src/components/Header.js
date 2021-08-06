@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 
-function Header ({user,setUser}) {
+function Header ({ userObj, setUserObj }) {
   return (
     <nav className="global-nav">
         <div>
@@ -13,7 +13,7 @@ function Header ({user,setUser}) {
         </div>
         
         <div className="navBar">
-        {!user ?  <> <NavLink activeClassName="active" exact to="/login">Login</NavLink> <NavLink activeClassName="active" exact to="/create-account"> Create Account</NavLink> </> :  <NavLink onClick={() => setUser(null)} exact to="/">Logout</NavLink>}
+        {!userObj ?  <> <NavLink activeClassName="active" exact to="/login">Login</NavLink> <NavLink activeClassName="active" exact to="/create-account"> Create Account</NavLink> </> :  <NavLink onClick={() => setUserObj({})} exact to="/">Logout</NavLink>}
         </div>
     </nav>
   )

@@ -1,2 +1,25 @@
 # 
 phase-2-group-project
+
+## 
+App
+|__Home
+    |__Header
+|__Login
+    |__Header
+|__CreateAccount
+    |__Header
+|__CreatePage
+    |__Header
+    |__RestaurantNav
+    |__RestaurantHeader
+    |__RestaurantHours
+    |__RestaurantMenu
+    |__RestaurantContact
+|__Restaurant
+    |__RestaurantNav
+    |__RestaurantHeader
+    |__RestaurantHours
+    |__RestaurantMenu
+    |__RestaurantContact
+|__Footer

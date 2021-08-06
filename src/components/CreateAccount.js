@@ -1,26 +1,14 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import { useHistory } from "react-router-dom";
 import Header from "./Header";
 
-/* e.preventDefault()
-const userObj = allData.find(userObj => userObj.username === username && userObj.password === password)
-{ userObj  ?  logIn(userObj) : alert("Invalid Login")}
-}
- */
-function CreateAccount({ user, setUser, setRestaurantData }) {
+
+function CreateAccount({ allData, setUserObj, userObj }) {
      const [username, setUsername] = useState("")
      const [password, setPassword] = useState("")
-     const [allData, setAllData]  = useState([])
 
      let history = useHistory();
-        
-
-    useEffect(() => {
-        console.log('useEffect fired')
-        fetch('http://localhost:3000/users')
-        .then(r => r.json())
-        .then(setAllData)
-    }, [])
+    
 
 
     const handleSubmit = (e) => { 
@@ -53,10 +41,10 @@ function CreateAccount({ user, setUser, setRestaurantData }) {
 
         const newAccount = { username, password, data };
         console.log(newAccount)
-        const userObj = allData.find(userObj => userObj.username === username)
-        {userObj? alert('User already exists. Login!'):  createAndLogin()}
+        const validateUserObj = allData.find(validateUserObj => validateUserObj.username === username)
+        {validateUserObj? alert('User already exists. Login!'):  createAndLogin()}
 
-        
+
         
         function createAndLogin() {
             console.log('createAndLogin fired')
@@ -68,8 +56,7 @@ function CreateAccount({ user, setUser, setRestaurantData }) {
             })
             .then(r => r.json())
             .then(res => {
-                setRestaurantData(res.data)
-                setUser(res.id)
+                setUserObj(res)
             })
             history.push("/create-page");
         }
@@ -82,7 +69,10 @@ function CreateAccount({ user, setUser, setRestaurantData }) {
     
     return (
         <div>
-            <Header user={user} setUser={setUser}/>
+            <Header 
+            userObj={userObj}
+            setUserObj = {setUserObj}
+            />
             <div className="login-container">
                 <form onSubmit={handleSubmit} className="new-account">
                     <h2 className="login-header"> Time to create your account!</h2>

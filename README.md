@@ -102,3 +102,6 @@ App
     |__RestaurantContact
 |__Footer
  -->
+
+
+## Thank you for reading!

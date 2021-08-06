@@ -49,7 +49,8 @@ function CreateAccount({ allData, setUserObj, userObj }) {
         const newAccount = { username, password, data };
         const validatedUserObj = allData.find(obj => obj.username === account.username)
         {validatedUserObj? alert('User already exists. Login!'):  createAndLogin()}
-
+        const validatedPasswordObj = allData.find(obj => obj.password > 4)
+        {validatedPasswordObj ? alert("password must be greater than 3 characters long") : createAndLogin()}
 
         
         function createAndLogin() {

@@ -13,8 +13,10 @@ let history = useHistory();
 
 function handleSubmit(e) { 
     e.preventDefault()
-    const validatedUserObj = allData.find(obj => obj.username === username && obj.password === password)
+
+    const validatedUserObj = allData.find(obj => obj.username.split(' ').join('') === username.split(' ').join('')  && obj.password === password)
     { validatedUserObj  ?  logIn(validatedUserObj) : alert("Invalid Login")}
+
 }
 
 function logIn(validatedUserObj) {

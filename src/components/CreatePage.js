@@ -9,10 +9,10 @@ import RestaurantContact from "./RestaurantContact";
 
 function CreatePage ({ user, setUser, restaurantData, setRestaurantData }) {
     const [previewWidth, setPreviewWidth] = useState("100%");
-    const [isLoading, setIsLoading] = useState(true)
+    const [isLoading, setIsLoading] = useState(true);
+    const [iframeRefresh, setIframeRefresh] = useState(0);
 
     let history = useHistory();
-    
 
     useEffect(() => {
         setTimeout(() => setIsLoading(false), 700)
@@ -25,6 +25,30 @@ function CreatePage ({ user, setUser, restaurantData, setRestaurantData }) {
             [e.target.name]: e.target.value
             }
         )
+
+        fetch(`http://localhost:3000/users/${user}`, {
+            method: 'PATCH', 
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({data:restaurantData})
+        })
+        .then(r => r.json())
+    }
+
+    function handleIframeClick(e) {
+        fetch(`http://localhost:3000/users/${user}`, {
+            method: 'PATCH', 
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({data:restaurantData})
+        })
+        .then(r => r.json());
+
+        document.getElementById('iframeid').src += '';
+
+        setIframeRefresh(0);
     }
 
     function handleSubmit(e) {
@@ -183,14 +207,20 @@ function CreatePage ({ user, setUser, restaurantData, setRestaurantData }) {
             </div>
             <div className="preview-aside-container">
                 <div className="preview-section-info">
-                    <p className="preview-section-callout">This is a preview</p>
+                    <button className="update-preview-button" onClick={handleIframeClick}>Update Preview</button>
+
                     <div className="preview-device-section">
                         <button className={ previewWidth === "100%" ? "preview-device active desktop-preview" : "preview-device desktop-preview"} onClick={()=>setPreviewWidth("100%")}><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="desktop" class="svg-inline--fa fa-desktop fa-w-18" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M528 0H48C21.5 0 0 21.5 0 48v320c0 26.5 21.5 48 48 48h192l-16 48h-72c-13.3 0-24 10.7-24 24s10.7 24 24 24h272c13.3 0 24-10.7 24-24s-10.7-24-24-24h-72l-16-48h192c26.5 0 48-21.5 48-48V48c0-26.5-21.5-48-48-48zm-16 352H64V64h448v288z"></path></svg></button>
                         <button className={ previewWidth === "320px" ? "preview-device active mobile-preview" : "preview-device mobile-preview"} onClick={()=>setPreviewWidth("320px")}><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="mobile-alt" class="svg-inline--fa fa-mobile-alt fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M272 0H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h224c26.5 0 48-21.5 48-48V48c0-26.5-21.5-48-48-48zM160 480c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm112-108c0 6.6-5.4 12-12 12H60c-6.6 0-12-5.4-12-12V60c0-6.6 5.4-12 12-12h200c6.6 0 12 5.4 12 12v312z"></path></svg></button>
                     </div>
                 </div>
-                <div className="preview-browser-container" style={{ width: previewWidth }}>
-                    <RestaurantNav />
+                <div className="iframe-container">
+                    <iframe src={`http://localhost:3001/restaurant/${user}`} id="iframeid" key={iframeRefresh} style={{ width: previewWidth }} />
+                </div>
+
+
+                {/* <iframe className="preview-browser-container" style={{ width: previewWidth }}> */}
+                    {/* <RestaurantNav />
                     <RestaurantHeader 
                         restaurantData={restaurantData}
                     />
@@ -202,8 +232,8 @@ function CreatePage ({ user, setUser, restaurantData, setRestaurantData }) {
                     />
                     <RestaurantContact 
                         restaurantData={restaurantData}
-                    />
-                </div>
+                    /> */}
+                {/* </div> */}
             </div>
          </div>
         </>

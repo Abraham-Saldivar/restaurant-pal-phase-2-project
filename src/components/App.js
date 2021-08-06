@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Route, Switch } from "react-router-dom";
 import Home from "./Home";
 import Login from "./Login";
@@ -8,40 +8,45 @@ import Restaurant from "./Restaurant";
 import Footer from "./Footer";
 
 function App() {
+  const [allData, setAllData]  = useState([])
+  const [userObj, setUserObj] = useState(allData[0])
 
-  const [user, setUser] = useState(null);
-  //^^^set user to id of a sample user to start
-  const [restaurantData, setRestaurantData] = useState([]);
+  useEffect(() => {
+    fetch(`http://localhost:3000/users`)
+    .then(res => res.json())
+    .then(data => setAllData(data))
+    },[])
+
+    const objFromUsername = allData.find(userObject => userObject.username === "john")
+    console.log(objFromUsername)
 
   return (
     <div>
       <Switch>
         <Route path="/login">
           <Login 
-          user={user}
-            setUser={setUser}
-            setRestaurantData={setRestaurantData}
+            allData = {allData}
+            userObj = {userObj}
+            setUserObj = {setUserObj}
           />
         </Route>
         <Route path="/create-account">
           <CreateAccount 
-          user={user}
-          setUser={setUser}
-          setRestaurantData={setRestaurantData}/>
+          allData = {allData}
+          setUserObj = {setUserObj}
+          />
         </Route>
         <Route path="/create-page">
           <CreatePage 
-            user = {user}
-            setUser={setUser}
-            restaurantData={restaurantData}
-            setRestaurantData={setRestaurantData}
+            userObj = {userObj}
+            setUserObj = {setUserObj}
           />
         </Route>
-        <Route path="/restaurant/:id">
+        <Route path="/restaurant/:username">
           <Restaurant 
-            restaurantData={restaurantData}
-            setRestaurantData={setRestaurantData}
-            user = {user}
+            userObj = {userObj}
+            allData = {allData}
+            setUserObj = {setUserObj}
           /> 
         </Route>
         <Route exact path="/">

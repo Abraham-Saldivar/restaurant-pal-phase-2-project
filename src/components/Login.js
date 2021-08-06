@@ -3,30 +3,22 @@ import React, { useEffect, useState } from "react"
 import { useHistory } from "react-router-dom";
 
 
-function Login ({setUser, user, setRestaurantData}) {
+function Login ({ allData, userObj, setUserObj }) {
 
 const [username, setUsername] = useState("")
 const [password, setPassword] = useState("")
-const [allData, setAllData]  = useState([])
 let history = useHistory();
 
-    
-useEffect(() => {
-fetch(`http://localhost:3000/users`)
-.then(res => res.json())
-.then(data => setAllData(data))
-},[])
 
 
 function handleSubmit(e) { 
     e.preventDefault()
-    const userObj = allData.find(userObj => userObj.username === username && userObj.password === password)
-    { userObj  ?  logIn(userObj) : alert("Invalid Login")}
+    const validateUserObj = allData.find(obj => obj.username === username && obj.password === password)
+    { validateUserObj  ?  logIn(validateUserObj) : alert("Invalid Login")}
 }
 
-function logIn(userObj) {
-    setRestaurantData(userObj.data)
-    setUser(userObj.id)
+function logIn(validateUserObj) {
+    setUserObj(validateUserObj)
     history.push("/create-page");
 }
     function handleNewAccount(){
@@ -36,7 +28,7 @@ function logIn(userObj) {
 
 return (
     <div >
-        <Header setUser={setUser} user={user}/>
+        <Header setUserObj={setUserObj} userObj={userObj}/>
 
         <div className="login-container">
             <form onSubmit={handleSubmit} className="login">

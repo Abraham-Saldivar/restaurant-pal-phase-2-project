@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useHistory, Link } from "react-router-dom";
 import Header from "./Header";
 
-function CreatePage ({ user, setUser, restaurantData, setRestaurantData }) {
+function CreatePage ({ userObj, setUserObj }) {
     const [previewWidth, setPreviewWidth] = useState("100%");
     const [isLoading, setIsLoading] = useState(true);
     const [iframeRefresh, setIframeRefresh] = useState(0);
@@ -15,9 +15,9 @@ function CreatePage ({ user, setUser, restaurantData, setRestaurantData }) {
 
 
     function handleChange(e) {
-        setRestaurantData(
-            {...restaurantData,
-            [e.target.name]: e.target.value
+        setUserObj(
+            {...userObj,
+                data: {[e.target.name]: e.target.value}
             }
         )
 
@@ -49,36 +49,39 @@ function CreatePage ({ user, setUser, restaurantData, setRestaurantData }) {
     function handleSubmit(e) {
         e.preventDefault();
 
-        fetch(`http://localhost:3000/users/${user}`, {
+        fetch(`http://localhost:3000/users/${userObj.id}`, {
             method: 'PATCH', 
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify({data:restaurantData})
+            body: JSON.stringify({data:userObj.data})
         })
         .then(r => r.json())
-        history.push(`/restaurant/${user}`);
+        history.push(`/restaurant/${userObj.username}`);
 
     }
 
     function handleCheck(e) {
+        console.log(e.target.name)
         const dayOpen = `${e.target.name}Open`;
         const dayClose = `${e.target.name}Close`;
-        console.log(restaurantData.dayOpen)
-        console.log(e.target.checked)
 
         {e.target.checked? 
-        setRestaurantData(
-            {...restaurantData,
-                [dayOpen]: '09:00',            
-                [dayClose]: '17:00'            
-            }
-        )
+            setUserObj(
+                {...userObj,
+                data: {
+                    [dayOpen]: "09:00",
+                    [dayClose]: "17:00",
+                 }
+                }
+            )
          :
-         setRestaurantData(
-            {...restaurantData,
-            [dayOpen]: "",
-            [dayClose]: "",
+         setUserObj(
+            {...userObj,
+            data: {
+                [dayOpen]: "",
+                [dayClose]: "",
+             }
             }
         )
         }
@@ -90,12 +93,12 @@ function CreatePage ({ user, setUser, restaurantData, setRestaurantData }) {
             <img className = "loading-gif" src = "/data/loading-logo.gif"/>
             :
                     <>
-                        <Header setUser={setUser} user={user}/>
+                        <Header setUserObj={setUserObj} userObj ={userObj}/>
         <div className="new-form">
             <div className="form-mobile-notice">
                 <div className="form-mobile-container">
                     <p>This page is best experienced on a desktop. Please switch to a desktop screen. Otherwise, you can preview your page here.</p>
-                    <Link to={`/restaurant/${user}`}>See Restaurant Site</Link>
+                    <Link to={`/restaurant/${userObj.id}`}>See Restaurant Site</Link>
                 </div>
             </div>
             <div className="form-aside-container">
@@ -103,89 +106,89 @@ function CreatePage ({ user, setUser, restaurantData, setRestaurantData }) {
                     <div className="form-section">
                         <h3 className="hero-text">About</h3>
                         <label>Restaurant Name</label>
-                        <input onChange = {handleChange} type="text" name="name" placeholder= "Acme Pizza co" value = {restaurantData.name} required/>
+                        <input onChange = {handleChange} type="text" name="name" placeholder= "Acme Pizza co" value = {userObj.data.name} required/>
                         <label>Restaurant Description</label>
-                        <input onChange = {handleChange} type="text" name="description" placeholder="Grungy bar with a lively atmosphere" value = {restaurantData.description} required/>
+                        <input onChange = {handleChange} type="text" name="description" placeholder="Grungy bar with a lively atmosphere" value = {userObj.data.description} required/>
                         <label>Background Image</label>
-                        <input onChange = {handleChange} type="text" name="backgroundImage" placeholder="Background Image URL" value = {restaurantData.backgroundImage} required/>
+                        <input onChange = {handleChange} type="text" name="backgroundImage" placeholder="Background Image URL" value = {userObj.data.backgroundImage} required/>
                         <label>Logo</label>
-                        <input onChange = {handleChange} type="text" name="logoImage" placeholder="Logo Image URL" value = {restaurantData.logoImage} required/>
+                        <input onChange = {handleChange} type="text" name="logoImage" placeholder="Logo Image URL" value = {userObj.data.logoImage} required/>
                     </div>
                     <div className="form-section">
                     <h3 className="hero-text">Menu</h3>
                         <label>Menu Image</label>
-                        <input onChange = {handleChange} type="text" name="menuImage" placeholder="Menu Image URL" value = {restaurantData.menuImage} required/>
+                        <input onChange = {handleChange} type="text" name="menuImage" placeholder="Menu Image URL" value = {userObj.data.menuImage} required/>
                     </div>
                     <div className="form-section">
                         <h3 className="hero-text">Hours & Location</h3>
                         <label>Google Maps Link</label>
-                        <input onChange = {handleChange} type="text" name="mapLink" placeholder="Google Maps URL" value = {restaurantData.mapLink} required/>
+                        <input onChange = {handleChange} type="text" name="mapLink" placeholder="Google Maps URL" value = {userObj.data.mapLink} required/>
                         <label>Address</label>
-                        <input onChange = {handleChange} type="text" name="address" placeholder="Address" value = {restaurantData.address} required/>
+                        <input onChange = {handleChange} type="text" name="address" placeholder="Address" value = {userObj.data.address} required/>
                         <div className="hours-container">
                             <label>Hours</label>
 
                             <label className="hour-item">
-                                <input type="checkbox" name = "monday" onChange={handleCheck} checked={!!restaurantData.mondayOpen}/>
+                                <input type="checkbox" name = "monday" onChange={handleCheck} checked={!!userObj.data.mondayOpen}/>
                                 <span>Monday</span>
                                 <div className="hours-input-container">
-                                    <input onChange = {handleChange} className="hour-input" type="time" name="mondayOpen" value= {restaurantData.mondayOpen} />
+                                    <input onChange = {handleChange} className="hour-input" type="time" name="mondayOpen" value= {userObj.data.mondayOpen} />
                                     <span>to</span>
-                                    <input onChange = {handleChange} className="hour-input" type="time" name="mondayClose" value= {restaurantData.mondayClose}/>
+                                    <input onChange = {handleChange} className="hour-input" type="time" name="mondayClose" value= {userObj.data.mondayClose}/>
                                 </div>  
                             </label>
                             <label className="hour-item">
-                                <input type="checkbox" name = "monday" onChange={handleCheck} checked={!!restaurantData.tuesdayOpen}/>
+                                <input type="checkbox" name = "tuesday" onChange={handleCheck} checked={!!userObj.data.tuesdayOpen}/>
                                 <span>Tuesday</span>
                                 <div className="hours-input-container">
-                                    <input onChange = {handleChange} className="hour-input" type="time" name="mondayOpen" value= {restaurantData.tuesdayOpen} />
+                                    <input onChange = {handleChange} className="hour-input" type="time" name="mondayOpen" value= {userObj.data.tuesdayOpen} />
                                     <span>to</span>
-                                    <input onChange = {handleChange} className="hour-input" type="time" name="mondayClose" value= {restaurantData.tuesdayClose}/>
+                                    <input onChange = {handleChange} className="hour-input" type="time" name="mondayClose" value= {userObj.data.tuesdayClose}/>
                                 </div>  
                             </label>
                             <label className="hour-item">
-                                <input type="checkbox" name = "monday" onChange={handleCheck} checked={!!restaurantData.wednesdayOpen}/>
+                                <input type="checkbox" name = "wednesday" onChange={handleCheck} checked={!!userObj.data.wednesdayOpen}/>
                                 <span>Wednesday</span>
                                 <div className="hours-input-container">
-                                    <input onChange = {handleChange} className="hour-input" type="time" name="mondayOpen" value= {restaurantData.wednesdayOpen} />
+                                    <input onChange = {handleChange} className="hour-input" type="time" name="mondayOpen" value= {userObj.data.wednesdayOpen} />
                                     <span>to</span>
-                                    <input onChange = {handleChange} className="hour-input" type="time" name="mondayClose" value= {restaurantData.wednesdayClose}/>
+                                    <input onChange = {handleChange} className="hour-input" type="time" name="mondayClose" value= {userObj.data.wednesdayClose}/>
                                 </div>  
                             </label>
                             <label className="hour-item">
-                                <input type="checkbox" name = "monday" onChange={handleCheck} checked={!!restaurantData.thursdayOpen}/>
+                                <input type="checkbox" name = "thursday" onChange={handleCheck} checked={!!userObj.data.thursdayOpen}/>
                                 <span>Thursday</span>
                                 <div className="hours-input-container">
-                                    <input onChange = {handleChange} className="hour-input" type="time" name="mondayOpen" value= {restaurantData.thursdayOpen} />
+                                    <input onChange = {handleChange} className="hour-input" type="time" name="mondayOpen" value= {userObj.data.thursdayOpen} />
                                     <span>to</span>
-                                    <input onChange = {handleChange} className="hour-input" type="time" name="mondayClose" value= {restaurantData.thursdayClose}/>
+                                    <input onChange = {handleChange} className="hour-input" type="time" name="mondayClose" value= {userObj.data.thursdayClose}/>
                                 </div>  
                             </label>
                             <label className="hour-item">
-                                <input type="checkbox" name = "monday" onChange={handleCheck} checked={!!restaurantData.fridayOpen}/>
+                                <input type="checkbox" name = "friday" onChange={handleCheck} checked={!!userObj.data.fridayOpen}/>
                                 <span>Friday</span>
                                 <div className="hours-input-container">
-                                    <input onChange = {handleChange} className="hour-input" type="time" name="mondayOpen" value= {restaurantData.fridayOpen} />
+                                    <input onChange = {handleChange} className="hour-input" type="time" name="mondayOpen" value= {userObj.data.fridayOpen} />
                                     <span>to</span>
-                                    <input onChange = {handleChange} className="hour-input" type="time" name="mondayClose" value= {restaurantData.fridayClose}/>
+                                    <input onChange = {handleChange} className="hour-input" type="time" name="mondayClose" value= {userObj.data.fridayClose}/>
                                 </div>  
                             </label>
                             <label className="hour-item">
-                                <input type="checkbox" name = "monday" onChange={handleCheck} checked={!!restaurantData.saturdayOpen}/>
+                                <input type="checkbox" name = "saturday" onChange={handleCheck} checked={!!userObj.data.saturdayOpen}/>
                                 <span>Saturday</span>
                                 <div className="hours-input-container">
-                                    <input onChange = {handleChange} className="hour-input" type="time" name="mondayOpen" value= {restaurantData.saturdayOpen} />
+                                    <input onChange = {handleChange} className="hour-input" type="time" name="mondayOpen" value= {userObj.data.saturdayOpen} />
                                     <span>to</span>
-                                    <input onChange = {handleChange} className="hour-input" type="time" name="mondayClose" value= {restaurantData.saturdayClose}/>
+                                    <input onChange = {handleChange} className="hour-input" type="time" name="mondayClose" value= {userObj.data.saturdayClose}/>
                                 </div>  
                             </label>
                             <label className="hour-item">
-                                <input type="checkbox" name = "monday" onChange={handleCheck} checked={!!restaurantData.sundayOpen}/>
+                                <input type="checkbox" name = "sunday" onChange={handleCheck} checked={!!userObj.data.sundayOpen}/>
                                 <span>Sunday</span>
                                 <div className="hours-input-container">
-                                    <input onChange = {handleChange} className="hour-input" type="time" name="mondayOpen" value= {restaurantData.sundayOpen} />
+                                    <input onChange = {handleChange} className="hour-input" type="time" name="mondayOpen" value= {userObj.data.sundayOpen} />
                                     <span>to</span>
-                                    <input onChange = {handleChange} className="hour-input" type="time" name="mondayClose" value= {restaurantData.sundayClose}/>
+                                    <input onChange = {handleChange} className="hour-input" type="time" name="mondayClose" value= {userObj.data.sundayClose}/>
                                 </div>  
                             </label>
                         </div>
@@ -193,9 +196,9 @@ function CreatePage ({ user, setUser, restaurantData, setRestaurantData }) {
                     <div className="form-section">
                         <h3 className="hero-text">Contact</h3>
                         <label>Phone Number</label>
-                        <input onChange = {handleChange} type="tel" name="number" placeholder='555-123-4567' value = {restaurantData.number} required/>
+                        <input onChange = {handleChange} type="tel" name="number" placeholder='555-123-4567' value = {userObj.data.number} required/>
                         <label>Email Address</label>
-                        <input onChange = {handleChange} type="email" name="email" placeholder='restaurant@gmail.com' value = {restaurantData.email} required/>
+                        <input onChange = {handleChange} type="email" name="email" placeholder='restaurant@gmail.com' value = {userObj.data.email} required/>
                     </div>
                     <button className="styled-button" type="submit">Save & Launch Page</button>
                 </form>
@@ -209,8 +212,9 @@ function CreatePage ({ user, setUser, restaurantData, setRestaurantData }) {
                         <button className={ previewWidth === "320px" ? "preview-device active mobile-preview" : "preview-device mobile-preview"} onClick={()=>setPreviewWidth("320px")}><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="mobile-alt" class="svg-inline--fa fa-mobile-alt fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M272 0H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h224c26.5 0 48-21.5 48-48V48c0-26.5-21.5-48-48-48zM160 480c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm112-108c0 6.6-5.4 12-12 12H60c-6.6 0-12-5.4-12-12V60c0-6.6 5.4-12 12-12h200c6.6 0 12 5.4 12 12v312z"></path></svg></button>
                     </div>
                 </div>
+
                 <div className="iframe-container">
-                    <iframe src={`http://localhost:3001/restaurant/${user}`} id="iframeid" key={iframeRefresh} style={{ width: previewWidth }} />
+                    <iframe src={`http://localhost:3001/restaurant/${userObj.id}`} id="iframeid" key={iframeRefresh} style={{ width: previewWidth }} />
                 </div>
             </div>
          </div>

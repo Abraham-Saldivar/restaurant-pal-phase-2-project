@@ -6,15 +6,18 @@ import RestaurantMenu from "./RestaurantMenu";
 import RestaurantHours from "./RestaurantHours";
 import RestaurantContact from "./RestaurantContact";
 
-function Restaurant ({ restaurantData, setRestaurantData, user }) {
+function Restaurant ({ userObj }) {
     let history = useHistory();
-    const { id } = useParams();
+    const { username } = useParams();
     const [isLoading, setIsLoading] = useState(true)
+    const [publicUserObj, setPublicUserObj] = useState({})
 
     useEffect(() => {
-        fetch(`http://localhost:3000/users/${id}`)
+        fetch(`http://localhost:3000/users`)
         .then(res=>res.json())
-        .then(e=>setRestaurantData(e.data))
+        .then(data => {
+            setPublicUserObj(data.find(userObject => userObject.username === username))
+        })
         setTimeout(() => setIsLoading(false), 700)
     },[])
 
@@ -30,19 +33,21 @@ function editButton() {
                     <img className = "loading-gif" src = "/data/loading-logo.gif"/>
                 : 
                     <div>
-                    {user && user.toString() === id.toString()? <button onClick = {editButton} className = "restaurant-edit">Edit your restaurant page</button> : null}
+             
+                    {userObj? <button onClick = {editButton} className = "restaurant-edit">Edit your restaurant page</button> : null}
+
                     <RestaurantNav />
                     <RestaurantHeader 
-                        restaurantData={restaurantData}
+                        restaurantData={publicUserObj.data}
                     />
                     <RestaurantMenu 
-                        restaurantData={restaurantData}
+                        restaurantData={publicUserObj.data}
                     />
                     <RestaurantHours 
-                        restaurantData={restaurantData}
+                        restaurantData={publicUserObj.data}
                     />
                     <RestaurantContact 
-                        restaurantData={restaurantData}
+                        restaurantData={publicUserObj.data}
                     />
                 </div>
                 }

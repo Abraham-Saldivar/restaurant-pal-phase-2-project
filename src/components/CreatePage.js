@@ -1,11 +1,6 @@
 import { useState, useEffect } from "react";
 import { useHistory, Link } from "react-router-dom";
 import Header from "./Header";
-import RestaurantNav from "./RestaurantNav";
-import RestaurantHeader from "./RestaurantHeader";
-import RestaurantMenu from "./RestaurantMenu";
-import RestaurantHours from "./RestaurantHours";
-import RestaurantContact from "./RestaurantContact";
 
 function CreatePage ({ user, setUser, restaurantData, setRestaurantData }) {
     const [previewWidth, setPreviewWidth] = useState("100%");
@@ -217,23 +212,6 @@ function CreatePage ({ user, setUser, restaurantData, setRestaurantData }) {
                 <div className="iframe-container">
                     <iframe src={`http://localhost:3001/restaurant/${user}`} id="iframeid" key={iframeRefresh} style={{ width: previewWidth }} />
                 </div>
-
-
-                {/* <iframe className="preview-browser-container" style={{ width: previewWidth }}> */}
-                    {/* <RestaurantNav />
-                    <RestaurantHeader 
-                        restaurantData={restaurantData}
-                    />
-                    <RestaurantMenu 
-                        restaurantData={restaurantData}
-                    />
-                    <RestaurantHours 
-                        restaurantData={restaurantData}
-                    />
-                    <RestaurantContact 
-                        restaurantData={restaurantData}
-                    /> */}
-                {/* </div> */}
             </div>
          </div>
         </>

@@ -9,16 +9,18 @@ import Footer from "./Footer";
 
 function App() {
   const [allData, setAllData]  = useState([])
-  const [userObj, setUserObj] = useState(allData[0])
+  const [userObj, setUserObj] = useState({})
 
   useEffect(() => {
     fetch(`http://localhost:3000/users`)
     .then(res => res.json())
     .then(data => setAllData(data))
+    setUserObj(allData[0])
     },[])
 
-    const objFromUsername = allData.find(userObject => userObject.username === "john")
-    console.log(objFromUsername)
+    // const objFromUsername = allData.find(userObject => userObject.username === username)
+    // console.log(objFromUsername)
+console.log(allData)
 
   return (
     <div>

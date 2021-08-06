@@ -21,23 +21,23 @@ function CreatePage ({ userObj, setUserObj }) {
             }
         )
 
-        fetch(`http://localhost:3000/users/${user}`, {
+        fetch(`http://localhost:3000/users/${userObj.id}`, {
             method: 'PATCH', 
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify({data:restaurantData})
+            body: JSON.stringify({data:userObj.data})
         })
         .then(r => r.json())
     }
 
     function handleIframeClick(e) {
-        fetch(`http://localhost:3000/users/${user}`, {
+        fetch(`http://localhost:3000/users/${userObj.id}`, {
             method: 'PATCH', 
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify({data:restaurantData})
+            body: JSON.stringify({data:userObj.data})
         })
         .then(r => r.json());
 
@@ -69,6 +69,7 @@ function CreatePage ({ userObj, setUserObj }) {
         {e.target.checked? 
             setUserObj(
                 {...userObj,
+                ...userObj.data,
                 data: {
                     [dayOpen]: "09:00",
                     [dayClose]: "17:00",
@@ -78,6 +79,7 @@ function CreatePage ({ userObj, setUserObj }) {
          :
          setUserObj(
             {...userObj,
+            ...userObj.data,
             data: {
                 [dayOpen]: "",
                 [dayClose]: "",
@@ -85,6 +87,7 @@ function CreatePage ({ userObj, setUserObj }) {
             }
         )
         }
+        console.log(userObj.data)
     }
 
     return (
@@ -214,7 +217,7 @@ function CreatePage ({ userObj, setUserObj }) {
                 </div>
 
                 <div className="iframe-container">
-                    <iframe src={`http://localhost:3001/restaurant/${userObj.id}`} id="iframeid" key={iframeRefresh} style={{ width: previewWidth }} />
+                    <iframe src={`http://localhost:3001/restaurant/${userObj.username}`} id="iframeid" key={iframeRefresh} style={{ width: previewWidth }} />
                 </div>
             </div>
          </div>

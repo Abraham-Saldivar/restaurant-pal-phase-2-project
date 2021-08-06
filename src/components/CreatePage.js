@@ -17,19 +17,14 @@ function CreatePage ({ userObj, setUserObj }) {
     function handleChange(e) {
         setUserObj(
             {...userObj,
-                data: {[e.target.name]: e.target.value}
+                data: {
+                    ...userObj.data,
+                    [e.target.name]: e.target.value
+                }
             }
         )
-
-        fetch(`http://localhost:3000/users/${userObj.id}`, {
-            method: 'PATCH', 
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({data:userObj.data})
-        })
-        .then(r => r.json())
     }
+
 
     function handleIframeClick(e) {
         fetch(`http://localhost:3000/users/${userObj.id}`, {
@@ -62,15 +57,14 @@ function CreatePage ({ userObj, setUserObj }) {
     }
 
     function handleCheck(e) {
-        console.log(e.target.name)
         const dayOpen = `${e.target.name}Open`;
         const dayClose = `${e.target.name}Close`;
 
         {e.target.checked? 
             setUserObj(
                 {...userObj,
-                ...userObj.data,
                 data: {
+                    ...userObj.data,
                     [dayOpen]: "09:00",
                     [dayClose]: "17:00",
                  }
@@ -79,15 +73,14 @@ function CreatePage ({ userObj, setUserObj }) {
          :
          setUserObj(
             {...userObj,
-            ...userObj.data,
             data: {
+                ...userObj.data,
                 [dayOpen]: "",
                 [dayClose]: "",
              }
             }
         )
         }
-        console.log(userObj.data)
     }
 
     return (

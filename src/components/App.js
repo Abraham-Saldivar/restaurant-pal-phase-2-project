@@ -15,12 +15,11 @@ function App() {
     fetch(`http://localhost:3000/users`)
     .then(res => res.json())
     .then(data => setAllData(data))
-    setUserObj(allData[0])
+    // setUserObj(allData[0])
     },[])
 
     // const objFromUsername = allData.find(userObject => userObject.username === username)
     // console.log(objFromUsername)
-console.log(allData)
 
   return (
     <div>

@@ -14,29 +14,29 @@ function CreateAccount({ allData, setUserObj, userObj }) {
     const handleSubmit = (e) => { 
         e.preventDefault()
         const data = {
-            name: "Your Restaurant Name Here",
+            name: "Your Restaurant Name",
             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur consectetur enim eget erat consectetur accumsan. Sed faucibus lectus orci, eget varius nunc dictum non.",
-            backgroundImage: "https://previews.123rf.com/images/annavaczi/annavaczi1501/annavaczi150100018/35325651-delicious-food-on-white-plate-close-up.jpg",
-            logoImage: "https://i.stack.imgur.com/kJSXT.png",
-            menuImage: "https://eadiescatering.com/wp-content/uploads/2021/03/Copy-of-Copy-of-Breakfast-Lunch-Menu_Rev-8.15v4-20.png",
-            address: "123 Main St., New York, NY 10001",
+            backgroundImage: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80",
+            logoImage: "https://logodix.com/logo/1934470.png",
+            menuImage: "https://i.pinimg.com/564x/89/bb/95/89bb9579c7618fd29b1613c25fc591d6.jpg",
+            address: "18492 5th Ave., New York, NY 10001",
             mapLink: "https://g.page/gigis-hollywood?share",
-            mondayOpen: "09:00",
-            mondayClose: "17:00",
-            tuesdayOpen: "09:00",
-            tuesdayClose: "17:00",
-            wednesdayOpen: "09:00",
-            wednesdayClose: "17:00",
-            thursdayOpen: "09:00",
-            thursdayClose: "17:00",
-            fridayOpen: "09:00",
-            fridayClose: "17:00",
-            saturdayOpen: null,
-            saturdayClose: null,
+            mondayOpen: null,
+            mondayClose: null,
+            tuesdayOpen: "17:00",
+            tuesdayClose: "22:00",
+            wednesdayOpen: "17:00",
+            wednesdayClose: "22:00",
+            thursdayOpen: "17:00",
+            thursdayClose: "22:00",
+            fridayOpen: "17:00",
+            fridayClose: "24:00",
+            saturdayOpen: "16:30",
+            saturdayClose: "24:00",
             sundayOpen: null,
             sundayClose: null,
-            number: "123-456-7890",
-            email: "info@gigis.la"
+            number: "273-563-1924",
+            email: "info@yourrestaurant.com"
         }
 
         const newAccount = { username, password, data };

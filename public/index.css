@@ -337,6 +337,7 @@ iframe {
     border: 1px solid black;
     border-radius: 5px;
     color: black;
+    cursor: pointer;
 }
 
 .preview-device-section {
@@ -398,6 +399,7 @@ iframe {
     font-family: Helvetica;
     border: none;
     font-size: 14px;
+    cursor: pointer;
 }
 
 .restaurant-nav {

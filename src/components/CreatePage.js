@@ -41,6 +41,7 @@ function CreatePage ({ userObj, setUserObj }) {
     }
 
     function handleCheck(e) {
+        console.log(e.target.name)
         const dayOpen = `${e.target.name}Open`;
         const dayClose = `${e.target.name}Close`;
 
@@ -116,7 +117,7 @@ function CreatePage ({ userObj, setUserObj }) {
                                 </div>  
                             </label>
                             <label className="hour-item">
-                                <input type="checkbox" name = "monday" onChange={handleCheck} checked={!!userObj.data.tuesdayOpen}/>
+                                <input type="checkbox" name = "tuesday" onChange={handleCheck} checked={!!userObj.data.tuesdayOpen}/>
                                 <span>Tuesday</span>
                                 <div className="hours-input-container">
                                     <input onChange = {handleChange} className="hour-input" type="time" name="mondayOpen" value= {userObj.data.tuesdayOpen} />
@@ -125,7 +126,7 @@ function CreatePage ({ userObj, setUserObj }) {
                                 </div>  
                             </label>
                             <label className="hour-item">
-                                <input type="checkbox" name = "monday" onChange={handleCheck} checked={!!userObj.data.wednesdayOpen}/>
+                                <input type="checkbox" name = "wednesday" onChange={handleCheck} checked={!!userObj.data.wednesdayOpen}/>
                                 <span>Wednesday</span>
                                 <div className="hours-input-container">
                                     <input onChange = {handleChange} className="hour-input" type="time" name="mondayOpen" value= {userObj.data.wednesdayOpen} />
@@ -134,7 +135,7 @@ function CreatePage ({ userObj, setUserObj }) {
                                 </div>  
                             </label>
                             <label className="hour-item">
-                                <input type="checkbox" name = "monday" onChange={handleCheck} checked={!!userObj.data.thursdayOpen}/>
+                                <input type="checkbox" name = "thursday" onChange={handleCheck} checked={!!userObj.data.thursdayOpen}/>
                                 <span>Thursday</span>
                                 <div className="hours-input-container">
                                     <input onChange = {handleChange} className="hour-input" type="time" name="mondayOpen" value= {userObj.data.thursdayOpen} />
@@ -143,7 +144,7 @@ function CreatePage ({ userObj, setUserObj }) {
                                 </div>  
                             </label>
                             <label className="hour-item">
-                                <input type="checkbox" name = "monday" onChange={handleCheck} checked={!!userObj.data.fridayOpen}/>
+                                <input type="checkbox" name = "friday" onChange={handleCheck} checked={!!userObj.data.fridayOpen}/>
                                 <span>Friday</span>
                                 <div className="hours-input-container">
                                     <input onChange = {handleChange} className="hour-input" type="time" name="mondayOpen" value= {userObj.data.fridayOpen} />
@@ -152,7 +153,7 @@ function CreatePage ({ userObj, setUserObj }) {
                                 </div>  
                             </label>
                             <label className="hour-item">
-                                <input type="checkbox" name = "monday" onChange={handleCheck} checked={!!userObj.data.saturdayOpen}/>
+                                <input type="checkbox" name = "saturday" onChange={handleCheck} checked={!!userObj.data.saturdayOpen}/>
                                 <span>Saturday</span>
                                 <div className="hours-input-container">
                                     <input onChange = {handleChange} className="hour-input" type="time" name="mondayOpen" value= {userObj.data.saturdayOpen} />
@@ -161,7 +162,7 @@ function CreatePage ({ userObj, setUserObj }) {
                                 </div>  
                             </label>
                             <label className="hour-item">
-                                <input type="checkbox" name = "monday" onChange={handleCheck} checked={!!userObj.data.sundayOpen}/>
+                                <input type="checkbox" name = "sunday" onChange={handleCheck} checked={!!userObj.data.sundayOpen}/>
                                 <span>Sunday</span>
                                 <div className="hours-input-container">
                                     <input onChange = {handleChange} className="hour-input" type="time" name="mondayOpen" value= {userObj.data.sundayOpen} />

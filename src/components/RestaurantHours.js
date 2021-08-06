@@ -32,13 +32,13 @@ function RestaurantHours ({ restaurantData }) {
                 <div className="hours-info">
                     <p className="info-header">Hours</p>
                     <ul>
-                        <li><span className="hours-day">Monday</span>{mondayOpen} - {mondayClose}</li>
-                        <li><span className="hours-day">Tuesday</span>{tuesdayOpen} - {tuesdayClose}</li>
-                        <li><span className="hours-day">Wednesday</span>{wednesdayOpen} - {wednesdayClose}</li>
-                        <li><span className="hours-day">Thursday</span>{thursdayOpen} - {thursdayClose}</li>
-                        <li><span className="hours-day">Friday</span>{fridayOpen} - {fridayClose}</li>
-                        <li><span className="hours-day">Saturday</span>{saturdayOpen} - {saturdayClose}</li>
-                        <li><span className="hours-day">Sunday</span>{sundayOpen} - {sundayClose}</li>
+                        <li><span className="hours-day">Monday</span>{mondayOpen? <>{mondayOpen} - {mondayClose}</>: 'Closed'}</li>
+                        <li><span className="hours-day">Tuesday</span>{tuesdayOpen? <>{tuesdayOpen} - {tuesdayClose}</>: 'Closed'}</li>
+                        <li><span className="hours-day">Wednesday</span>{wednesdayOpen? <>{wednesdayOpen} - {wednesdayClose}</>: 'Closed'}</li>
+                        <li><span className="hours-day">Thursday</span>{thursdayOpen? <>{thursdayOpen} - {thursdayClose}</>: 'Closed'}</li>
+                        <li><span className="hours-day">Friday</span>{fridayOpen? <>{fridayOpen} - {fridayClose}</>: 'Closed'}</li>
+                        <li><span className="hours-day">Saturday</span>{saturdayOpen? <>{saturdayOpen} - {saturdayClose}</>: 'Closed'}</li>
+                        <li><span className="hours-day">Sunday</span>{sundayOpen? <>{sundayOpen} - {sundayClose}</>: 'Closed'}</li>
                     </ul>
                 </div>
                 

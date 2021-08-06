@@ -4,8 +4,12 @@ import Header from "./Header";
 
 
 function CreateAccount({ allData, setUserObj, userObj }) {
-     const [username, setUsername] = useState("")
-     const [password, setPassword] = useState("")
+     const [account, setAccount] = useState(
+         {
+             username: "",
+             password: ""
+         }
+     )
 
      let history = useHistory();
     
@@ -13,6 +17,7 @@ function CreateAccount({ allData, setUserObj, userObj }) {
 
     const handleSubmit = (e) => { 
         e.preventDefault()
+        
         const data = {
             name: "Your Restaurant Name",
             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur consectetur enim eget erat consectetur accumsan. Sed faucibus lectus orci, eget varius nunc dictum non.",
@@ -20,7 +25,7 @@ function CreateAccount({ allData, setUserObj, userObj }) {
             logoImage: "https://logodix.com/logo/1934470.png",
             menuImage: "https://i.pinimg.com/564x/89/bb/95/89bb9579c7618fd29b1613c25fc591d6.jpg",
             address: "18492 5th Ave., New York, NY 10001",
-            mapLink: "https://g.page/gigis-hollywood?share",
+            mapLink: "https://www.google.com/maps/embed/v1/place?q=place_id:ChIJh5R5ppi_woARD44Zen5aB4I&key=AIzaSyCKMghPPFlzCbg7BSywBc5JHqQv8oJ3sTc",
             mondayOpen: null,
             mondayClose: null,
             tuesdayOpen: "17:00",
@@ -39,16 +44,15 @@ function CreateAccount({ allData, setUserObj, userObj }) {
             email: "info@yourrestaurant.com"
         }
 
+        const username = account.username
+        const password = account.password
         const newAccount = { username, password, data };
-        console.log(newAccount)
-        const validatedUserObj = allData.find(obj => obj.username === username)
+        const validatedUserObj = allData.find(obj => obj.username === account.username)
         {validatedUserObj? alert('User already exists. Login!'):  createAndLogin()}
 
 
         
         function createAndLogin() {
-            console.log('createAndLogin fired')
-
             fetch("http://localhost:3000/users" , {
                 method: "POST" , 
                 headers: {"Content-Type" : "application/json"}, 
@@ -66,6 +70,16 @@ function CreateAccount({ allData, setUserObj, userObj }) {
         history.push("/login")
     }
 
+
+    function handleChange(e) {
+            setAccount(
+                {
+                ...account,
+                [e.target.name]: e.target.value.replace(' ', '')
+                }
+            )
+    }
+
     return (
         <div>
             <Header 
@@ -78,9 +92,9 @@ function CreateAccount({ allData, setUserObj, userObj }) {
                         
                     <div className="login-form-container">
                         <label className="login-form-label"> Username</label>
-                            <input placeholder="Username" value={username} type="text" className="login-form-input" onChange={(e) => setUsername(e.target.value)}/>
+                            <input placeholder="Username" value={account.username} type="text" name = "username" className="login-form-input" onChange={handleChange}/>
                         <label className="login-form-label"> Password</label>
-                            <input placeholder="Password" value={password} type="password" className="login-form-input" onChange={(e) => setPassword(e.target.value)} required/>
+                            <input placeholder="Password" value={account.password} type="password" name = "password" className="login-form-input" onChange={handleChange} required/>
                         <input type="submit" value="Create" className="styled-button" />
                         <button className="login-sign-button" onClick={handleExistingAccount}>Already have a account? Sign in. </button>
                     </div>    

@@ -17,27 +17,22 @@ function CreatePage ({ userObj, setUserObj }) {
     function handleChange(e) {
         setUserObj(
             {...userObj,
-                data: {[e.target.name]: e.target.value}
+                data: {
+                    ...userObj.data,
+                    [e.target.name]: e.target.value
+                }
             }
         )
-
-        fetch(`http://localhost:3000/users/${user}`, {
-            method: 'PATCH', 
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({data:restaurantData})
-        })
-        .then(r => r.json())
     }
 
+
     function handleIframeClick(e) {
-        fetch(`http://localhost:3000/users/${user}`, {
+        fetch(`http://localhost:3000/users/${userObj.id}`, {
             method: 'PATCH', 
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify({data:restaurantData})
+            body: JSON.stringify({data:userObj.data})
         })
         .then(r => r.json());
 
@@ -62,7 +57,6 @@ function CreatePage ({ userObj, setUserObj }) {
     }
 
     function handleCheck(e) {
-        console.log(e.target.name)
         const dayOpen = `${e.target.name}Open`;
         const dayClose = `${e.target.name}Close`;
 
@@ -70,6 +64,7 @@ function CreatePage ({ userObj, setUserObj }) {
             setUserObj(
                 {...userObj,
                 data: {
+                    ...userObj.data,
                     [dayOpen]: "09:00",
                     [dayClose]: "17:00",
                  }
@@ -79,6 +74,7 @@ function CreatePage ({ userObj, setUserObj }) {
          setUserObj(
             {...userObj,
             data: {
+                ...userObj.data,
                 [dayOpen]: "",
                 [dayClose]: "",
              }
@@ -214,7 +210,7 @@ function CreatePage ({ userObj, setUserObj }) {
                 </div>
 
                 <div className="iframe-container">
-                    <iframe src={`http://localhost:3001/restaurant/${userObj.id}`} id="iframeid" key={iframeRefresh} style={{ width: previewWidth }} />
+                    <iframe src={`http://localhost:3001/restaurant/${userObj.username}`} id="iframeid" key={iframeRefresh} style={{ width: previewWidth }} />
                 </div>
             </div>
          </div>

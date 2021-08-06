@@ -220,15 +220,6 @@ h1 {
     margin-bottom: 8px;
 }
 
-.sample-container img {
-    width: 100%;
-    border-radius: 10px;
-    margin-bottom: 24px;
-    box-shadow: 10px 10px 5px #ccc;
-    -moz-box-shadow: 10px 10px 5px #ccc;
-    -webkit-box-shadow: 10px 10px 5px #ccc;
-    -khtml-box-shadow: 10px 10px 5px #ccc;
-}
 
 .sample-container a {
     color: black;
@@ -238,6 +229,7 @@ h1 {
 /* Create Page Styling */
 .new-form {
     overflow: auto;
+    background-color: #f5f5f5;
 }
 
 .form-aside-container {
@@ -247,6 +239,7 @@ h1 {
     padding: 40px;
     height: calc(100vh - 66px);
     overflow: scroll;
+    background-color: white;
 }
 
 .form-aside-container .hero-text {
@@ -283,9 +276,13 @@ h1 {
     text-align: center;
 }
 
-iframe {
+.iframe-container iframe {
     height: 600px;
     border-radius: 20px;
+    box-shadow: 10px 10px 5px #ccc;
+    -moz-box-shadow: 10px 10px 5px #ccc;
+    -webkit-box-shadow: 10px 10px 5px #ccc;
+    -khtml-box-shadow: 10px 10px 5px #ccc;
 }
 
 .hours-container .hours-input-container span {
@@ -306,7 +303,7 @@ iframe {
 
 .preview-aside-container {
     display: inline-block;
-    width: calc(100vw - 480px);
+    width: calc(100vw - 497px);
     float: left;
     background-color: #f5f5f5;
     padding: 40px;

@@ -196,7 +196,7 @@ function CreatePage ({ userObj, setUserObj }) {
                         <label>Email Address</label>
                         <input onChange = {handleChange} type="email" name="email" placeholder='restaurant@gmail.com' value = {userObj.data.email} required/>
                     </div>
-                    <button className="styled-button" type="submit">Save & Launch Page</button>
+                    <button className="styled-button" type="submit">Launch Page</button>
                 </form>
             </div>
             <div className="preview-aside-container">

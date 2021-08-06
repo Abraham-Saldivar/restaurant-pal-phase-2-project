@@ -1,8 +1,6 @@
 import { NavLink } from "react-router-dom";
 
-function Header ({ userObj }) {
-console.log('header mounted')
-console.log(userObj)
+function Header ({ userObj, setUserObj }) {
 
   return (
     <nav className="global-nav">
@@ -19,7 +17,7 @@ console.log(userObj)
           {!userObj ?  
             <> <NavLink activeClassName="active" exact to="/login">Login</NavLink> <NavLink activeClassName="active" exact to="/create-account"> Create Account</NavLink> </> 
             :  
-            <NavLink exact to="/">Logout</NavLink>
+            <NavLink onClick = {() => setUserObj("")} exact to="/">Logout</NavLink>
           }
         </div>
     </nav>

@@ -20,7 +20,6 @@ function App() {
 
     // const objFromUsername = allData.find(userObject => userObject.username === username)
     // console.log(objFromUsername)
-console.log(userObj)
   return (
     <div>
       <Switch>
@@ -51,7 +50,7 @@ console.log(userObj)
           /> 
         </Route>
         <Route exact path="/">
-          <Home />
+          <Home userObj = {userObj} setUserObj = {setUserObj}/>
         </Route>
       </Switch>
       <Footer />

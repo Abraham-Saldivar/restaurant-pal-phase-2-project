@@ -41,8 +41,8 @@ function CreateAccount({ allData, setUserObj, userObj }) {
 
         const newAccount = { username, password, data };
         console.log(newAccount)
-        const validateUserObj = allData.find(validateUserObj => validateUserObj.username === username)
-        {validateUserObj? alert('User already exists. Login!'):  createAndLogin()}
+        const validatedUserObj = allData.find(obj => obj.username === username)
+        {validatedUserObj? alert('User already exists. Login!'):  createAndLogin()}
 
 
         
@@ -66,7 +66,6 @@ function CreateAccount({ allData, setUserObj, userObj }) {
         history.push("/login")
     }
 
-    
     return (
         <div>
             <Header 

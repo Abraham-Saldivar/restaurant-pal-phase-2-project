@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import Header from "./Header";
 
-function Home () {
+function Home ( {userObj, setUserObj}) {
     return (
         <div className="hp-wrapper">
-            <Header />
+            <Header userObj = {userObj} setUserObj = {setUserObj}/>
             <div className="hp-banner"></div>
             <div className="hp-banner-text">
                 <h2 className="hp-banner-intro">Create a simple restaurant site in minutes.</h2>
@@ -20,7 +20,7 @@ function Home () {
                 {/* Might want to do a map here on the sample websites */}
                 <div className="sample-container">
                     <div className="sample-container">
-                        <Link to="/restaurant/3">
+                        <Link to="/restaurant/kazunori">
                             <img src="https://p69.f3.n0.cdn.getcloudapp.com/items/yAuyPl7v/77673293-c38d-4b03-8613-7be6429cd60d.jpg?source=viewer&v=23a5767e6ecbd4311cb6d93f7ef560a1" alt="Sliding"/>
                             <p className="hero-text">Rakkan</p>
                             <p className="location-text">Los Angeles, CA</p>

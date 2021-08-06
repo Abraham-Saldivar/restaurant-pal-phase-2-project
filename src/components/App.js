@@ -9,7 +9,7 @@ import Footer from "./Footer";
 
 function App() {
   const [allData, setAllData]  = useState([])
-  const [userObj, setUserObj] = useState({})
+  const [userObj, setUserObj] = useState("")
 
   useEffect(() => {
     fetch(`http://localhost:3000/users`)
@@ -20,7 +20,7 @@ function App() {
 
     // const objFromUsername = allData.find(userObject => userObject.username === username)
     // console.log(objFromUsername)
-
+console.log(userObj)
   return (
     <div>
       <Switch>

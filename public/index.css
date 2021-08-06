@@ -3,6 +3,7 @@ body {
     font-family: "Helvetica";
     font-size: 14px;
     margin: 0;
+    background-color: white;
 }
 
 ul {
@@ -278,6 +279,15 @@ h1 {
     font-size: 14px;
 }
 
+.iframe-container {
+    text-align: center;
+}
+
+iframe {
+    height: 600px;
+    border-radius: 20px;
+}
+
 .hours-container .hours-input-container span {
     margin: 0 8px;
 }
@@ -320,12 +330,13 @@ h1 {
     overflow: auto;
 }
 
-.preview-section-callout {
-    display: inline-block;
-    float: left;
-    color: #666;
-    width: 33%;
-    margin-top: 12px;
+.update-preview-button {
+    height: 32px;
+    width: 140px;
+    background-color: transparent;
+    border: 1px solid black;
+    border-radius: 5px;
+    color: black;
 }
 
 .preview-device-section {
@@ -631,10 +642,11 @@ footer p {
         display: block;
         width: calc(100% - 48px);
         padding: 24px;
+        text-align: center;
     }
 
     .restaurant-header-logo {
-        width: 100%;
+        width: auto;
         height: 40px;
     }
 

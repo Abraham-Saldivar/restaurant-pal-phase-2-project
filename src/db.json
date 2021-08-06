@@ -214,16 +214,6 @@
       "username": "john",
       "password": "ilovejohn",
       "data": {
-        "mondayOpen": "09:00",
-        "mondayClose": "17:00"
-      },
-      "id": 8
-    },
-    {
-      "username": "testing123",
-      "password": "ilovetesting",
-      "data": {
-        "name": "Kazunori",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur consectetur enim eget erat consectetur accumsan. Sed faucibus lectus orci, eget varius nunc dictum non.",
         "backgroundImage": "https://previews.123rf.com/images/annavaczi/annavaczi1501/annavaczi150100018/35325651-delicious-food-on-white-plate-close-up.jpg",
         "logoImage": "https://i.stack.imgur.com/kJSXT.png",
@@ -306,8 +296,7 @@
         "sundayClose": null,
         "number": "123-456-7890",
         "email": "info@gigis.la"
-      },
-      "id": 11
+      }
     }
   ]
 }

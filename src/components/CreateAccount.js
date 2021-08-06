@@ -92,7 +92,7 @@ function CreateAccount({ allData, setUserObj, userObj }) {
                         
                     <div className="login-form-container">
                         <label className="login-form-label"> Username</label>
-                            <input placeholder="Username" value={account.username} type="text" name = "username" className="login-form-input" onChange={handleChange}/>
+                            <input placeholder="Username" value={account.username} type="text" name = "username" className="login-form-input" onChange={handleChange} required/>
                         <label className="login-form-label"> Password</label>
                             <input placeholder="Password" value={account.password} type="password" name = "password" className="login-form-input" onChange={handleChange} required/>
                         <input type="submit" value="Create" className="styled-button" />

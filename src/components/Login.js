@@ -1,5 +1,5 @@
 import Header from "./Header";
-import React, { useEffect, useState } from "react"
+import React, { useState } from "react"
 import { useHistory } from "react-router-dom";
 
 
@@ -13,12 +13,14 @@ let history = useHistory();
 
 function handleSubmit(e) { 
     e.preventDefault()
-    const validateUserObj = allData.find(obj => obj.username.split(' ').join('') === username.split(' ').join('')  && obj.password === password)
-    { validateUserObj  ?  logIn(validateUserObj) : alert("Invalid Login")}
+
+    const validatedUserObj = allData.find(obj => obj.username.split(' ').join('') === username.split(' ').join('')  && obj.password === password)
+    { validatedUserObj  ?  logIn(validatedUserObj) : alert("Invalid Login")}
+
 }
 
-function logIn(validateUserObj) {
-    setUserObj(validateUserObj)
+function logIn(validatedUserObj) {
+    setUserObj(validatedUserObj)
     history.push("/create-page");
 }
     function handleNewAccount(){

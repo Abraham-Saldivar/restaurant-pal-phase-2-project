@@ -239,66 +239,6 @@
         "name": "Star Pizza"
       },
       "id": 8
-    },
-    {
-      "username": "abraham",
-      "password": "hi",
-      "data": {
-        "name": "Your Restaurant Name",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur consectetur enim eget erat consectetur accumsan. Sed faucibus lectus orci, eget varius nunc dictum non.",
-        "backgroundImage": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80",
-        "logoImage": "https://logodix.com/logo/1934470.png",
-        "menuImage": "https://i.pinimg.com/564x/89/bb/95/89bb9579c7618fd29b1613c25fc591d6.jpg",
-        "address": "18492 5th Ave., New York, NY 10001",
-        "mapLink": "https://www.google.com/maps/embed/v1/place?q=place_id:ChIJh5R5ppi_woARD44Zen5aB4I&key=AIzaSyCKMghPPFlzCbg7BSywBc5JHqQv8oJ3sTc",
-        "mondayOpen": null,
-        "mondayClose": null,
-        "tuesdayOpen": "17:00",
-        "tuesdayClose": "22:00",
-        "wednesdayOpen": "17:00",
-        "wednesdayClose": "22:00",
-        "thursdayOpen": "17:00",
-        "thursdayClose": "22:00",
-        "fridayOpen": "17:00",
-        "fridayClose": "24:00",
-        "saturdayOpen": "16:30",
-        "saturdayClose": "24:00",
-        "sundayOpen": null,
-        "sundayClose": null,
-        "number": "273-563-1924",
-        "email": "info@yourrestaurant.com"
-      },
-      "id": 9
-    },
-    {
-      "username": "abraham",
-      "password": "hi",
-      "data": {
-        "name": "Your Restaurant Name",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur consectetur enim eget erat consectetur accumsan. Sed faucibus lectus orci, eget varius nunc dictum non.",
-        "backgroundImage": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80",
-        "logoImage": "https://logodix.com/logo/1934470.png",
-        "menuImage": "https://i.pinimg.com/564x/89/bb/95/89bb9579c7618fd29b1613c25fc591d6.jpg",
-        "address": "18492 5th Ave., New York, NY 10001",
-        "mapLink": "https://www.google.com/maps/embed/v1/place?q=place_id:ChIJh5R5ppi_woARD44Zen5aB4I&key=AIzaSyCKMghPPFlzCbg7BSywBc5JHqQv8oJ3sTc",
-        "mondayOpen": null,
-        "mondayClose": null,
-        "tuesdayOpen": "17:00",
-        "tuesdayClose": "22:00",
-        "wednesdayOpen": "17:00",
-        "wednesdayClose": "22:00",
-        "thursdayOpen": "17:00",
-        "thursdayClose": "22:00",
-        "fridayOpen": "17:00",
-        "fridayClose": "24:00",
-        "saturdayOpen": "16:30",
-        "saturdayClose": "24:00",
-        "sundayOpen": null,
-        "sundayClose": null,
-        "number": "273-563-1924",
-        "email": "info@yourrestaurant.com"
-      },
-      "id": 10
     }
   ]
 }

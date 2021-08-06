@@ -137,54 +137,54 @@ function CreatePage ({ userObj, setUserObj }) {
                                 <input type="checkbox" name = "tuesday" onChange={handleCheck} checked={!!userObj.data.tuesdayOpen}/>
                                 <span>Tuesday</span>
                                 <div className="hours-input-container">
-                                    <input onChange = {handleChange} className="hour-input" type="time" name="mondayOpen" value= {userObj.data.tuesdayOpen} />
+                                    <input onChange = {handleChange} className="hour-input" type="time" name="tuesdayOpen" value= {userObj.data.tuesdayOpen} />
                                     <span>to</span>
-                                    <input onChange = {handleChange} className="hour-input" type="time" name="mondayClose" value= {userObj.data.tuesdayClose}/>
+                                    <input onChange = {handleChange} className="hour-input" type="time" name="tuesdayClose" value= {userObj.data.tuesdayClose}/>
                                 </div>  
                             </label>
                             <label className="hour-item">
                                 <input type="checkbox" name = "wednesday" onChange={handleCheck} checked={!!userObj.data.wednesdayOpen}/>
                                 <span>Wednesday</span>
                                 <div className="hours-input-container">
-                                    <input onChange = {handleChange} className="hour-input" type="time" name="mondayOpen" value= {userObj.data.wednesdayOpen} />
+                                    <input onChange = {handleChange} className="hour-input" type="time" name="wednesdayOpen" value= {userObj.data.wednesdayOpen} />
                                     <span>to</span>
-                                    <input onChange = {handleChange} className="hour-input" type="time" name="mondayClose" value= {userObj.data.wednesdayClose}/>
+                                    <input onChange = {handleChange} className="hour-input" type="time" name="wednesdayClose" value= {userObj.data.wednesdayClose}/>
                                 </div>  
                             </label>
                             <label className="hour-item">
                                 <input type="checkbox" name = "thursday" onChange={handleCheck} checked={!!userObj.data.thursdayOpen}/>
                                 <span>Thursday</span>
                                 <div className="hours-input-container">
-                                    <input onChange = {handleChange} className="hour-input" type="time" name="mondayOpen" value= {userObj.data.thursdayOpen} />
+                                    <input onChange = {handleChange} className="hour-input" type="time" name="thursdayOpen" value= {userObj.data.thursdayOpen} />
                                     <span>to</span>
-                                    <input onChange = {handleChange} className="hour-input" type="time" name="mondayClose" value= {userObj.data.thursdayClose}/>
+                                    <input onChange = {handleChange} className="hour-input" type="time" name="thursdayClose" value= {userObj.data.thursdayClose}/>
                                 </div>  
                             </label>
                             <label className="hour-item">
                                 <input type="checkbox" name = "friday" onChange={handleCheck} checked={!!userObj.data.fridayOpen}/>
                                 <span>Friday</span>
                                 <div className="hours-input-container">
-                                    <input onChange = {handleChange} className="hour-input" type="time" name="mondayOpen" value= {userObj.data.fridayOpen} />
+                                    <input onChange = {handleChange} className="hour-input" type="time" name="fridayOpen" value= {userObj.data.fridayOpen} />
                                     <span>to</span>
-                                    <input onChange = {handleChange} className="hour-input" type="time" name="mondayClose" value= {userObj.data.fridayClose}/>
+                                    <input onChange = {handleChange} className="hour-input" type="time" name="fridayClose" value= {userObj.data.fridayClose}/>
                                 </div>  
                             </label>
                             <label className="hour-item">
                                 <input type="checkbox" name = "saturday" onChange={handleCheck} checked={!!userObj.data.saturdayOpen}/>
                                 <span>Saturday</span>
                                 <div className="hours-input-container">
-                                    <input onChange = {handleChange} className="hour-input" type="time" name="mondayOpen" value= {userObj.data.saturdayOpen} />
+                                    <input onChange = {handleChange} className="hour-input" type="time" name="saturdayOpen" value= {userObj.data.saturdayOpen} />
                                     <span>to</span>
-                                    <input onChange = {handleChange} className="hour-input" type="time" name="mondayClose" value= {userObj.data.saturdayClose}/>
+                                    <input onChange = {handleChange} className="hour-input" type="time" name="saturdayClose" value= {userObj.data.saturdayClose}/>
                                 </div>  
                             </label>
                             <label className="hour-item">
                                 <input type="checkbox" name = "sunday" onChange={handleCheck} checked={!!userObj.data.sundayOpen}/>
                                 <span>Sunday</span>
                                 <div className="hours-input-container">
-                                    <input onChange = {handleChange} className="hour-input" type="time" name="mondayOpen" value= {userObj.data.sundayOpen} />
+                                    <input onChange = {handleChange} className="hour-input" type="time" name="sundayOpen" value= {userObj.data.sundayOpen} />
                                     <span>to</span>
-                                    <input onChange = {handleChange} className="hour-input" type="time" name="mondayClose" value= {userObj.data.sundayClose}/>
+                                    <input onChange = {handleChange} className="hour-input" type="time" name="sundayClose" value= {userObj.data.sundayClose}/>
                                 </div>  
                             </label>
                         </div>
